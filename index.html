@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════════════
+       SEO PRIMARIO — leído por Google sin ejecutar JS
+  ════════════════════════════════════════════════ -->
+  <title>AI Career Builder — Analiza tu CV con IA gratis</title>
+  <meta name="description"
+        content="Sube tu CV y la IA te da un diagnóstico completo: tu nivel profesional, cómo usar IA para apalancar tu carrera y tus próximos pasos concretos a seguir. Gratis. Sin registro." />
+  <meta name="keywords"
+        content="analizar CV con IA, diagnóstico de carrera, inteligencia artificial, Colombia, LATAM, potencial IA, próximos pasos carrera" />
+  <meta name="author"   content="Luis Castro · @where_lucho" />
+  <meta name="robots"   content="index, follow" />
+  <link rel="canonical" href="https://aicareerbuilder.app" />
+
+  <!-- ═══════════════════════════════════════════════
+       OPEN GRAPH — previews en LinkedIn, WhatsApp, Facebook
+       (crawlers NO ejecutan JS — estos tags deben ser estáticos)
+  ════════════════════════════════════════════════ -->
+  <meta property="og:type"         content="website" />
+  <meta property="og:url"          content="https://aicareerbuilder.app" />
+  <meta property="og:title"        content="AI Career Builder — Analiza tu CV con IA gratis" />
+  <meta property="og:description"  content="Sube tu CV y la IA te da un diagnóstico completo: tu nivel profesional, cómo usar IA para apalancar tu carrera y tus próximos pasos. Gratis." />
+  <meta property="og:image"        content="https://aicareerbuilder.app/og-preview.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale"       content="es_CO" />
+  <meta property="og:site_name"    content="AI Career Builder" />
+
+  <!-- ═══════════════════════════════════════════════
+       TWITTER / X CARD
+  ════════════════════════════════════════════════ -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@where_lucho" />
+  <meta name="twitter:creator"     content="@where_lucho" />
+  <meta name="twitter:title"       content="AI Career Builder — Analiza tu CV con IA gratis" />
+  <meta name="twitter:description" content="Sube tu CV y la IA te da diagnóstico de nivel, cómo apalancar tu carrera con IA y próximos pasos concretos." />
+  <meta name="twitter:image"       content="https://aicareerbuilder.app/og-preview.png" />
+
+  <!-- ═══════════════════════════════════════════════
+       JSON-LD — Google Rich Results
+  ════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AI Career Builder",
+    "url": "https://aicareerbuilder.app",
+    "description": "Analiza tu CV con IA y recibe un diagnóstico completo de carrera: nivel profesional, cómo apalancar tu carrera con inteligencia artificial y próximos pasos concretos.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "es",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "1 análisis gratuito por usuario"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Luis Castro",
+      "url": "https://www.instagram.com/where_lucho",
+      "sameAs": ["https://www.instagram.com/where_lucho"]
+    }
+  }
+  </script>
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700;900&display=swap"
+        rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --yellow:  #F5E500;
+      --black:   #0A0A0A;
+      --white:   #FFFFFF;
+      --gray:    #888888;
+      --surface: #111111;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ─────────────────────────────────────── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid #1a1a1a;
+      position: sticky;
+      top: 0;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+
+    .nav-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 3px;
+      color: var(--yellow);
+      text-decoration: none;
+    }
+
+    .nav-by {
+      font-size: 0.75rem;
+      color: var(--gray);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* ── HERO ────────────────────────────────────── */
+    .hero {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      color: var(--gray);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 9vw, 7rem);
+      color: var(--yellow);
+      letter-spacing: 4px;
+      line-height: 0.95;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 span { color: var(--white); }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--gray);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 0.85rem 2.2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(245,229,0,0.35);
+      transition: background 0.15s, box-shadow 0.15s, transform 0.1s;
+    }
+
+    .btn-primary:hover {
+      background: #ffe800;
+      box-shadow: 0 6px 32px rgba(245,229,0,0.5);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      border: 1px solid #2a2a2a;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--yellow);
+      color: var(--yellow);
+    }
+
+    /* ── TRUST BAR ───────────────────────────────── */
+    .trust {
+      max-width: 860px;
+      margin: 0 auto 4rem;
+      padding: 0 2rem;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .trust-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--yellow);
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+
+    .trust-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .trust-sep {
+      width: 1px;
+      background: #1a1a1a;
+      align-self: stretch;
+    }
+
+    /* ── FEATURES ────────────────────────────────── */
+    .section {
+      max-width: 860px;
+      margin: 0 auto 5rem;
+      padding: 0 2rem;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      letter-spacing: 2px;
+      color: var(--white);
+      margin-bottom: 2.5rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid #1e1e1e;
+      border-radius: 6px;
+      padding: 1.5rem;
+      transition: border-color 0.2s;
+    }
+
+    .feature-card:hover { border-color: #2e2e2e; }
+
+    .feature-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+
+    .feature-name {
+      font-weight: 900;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.4rem;
+    }
+
+    .feature-desc {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+
+    /* ── STEPS ───────────────────────────────────── */
+    .steps { display: flex; flex-direction: column; gap: 0; }
+
+    .step {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .step:last-child { border-bottom: none; }
+
+    .step-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      color: var(--yellow);
+      letter-spacing: 2px;
+      line-height: 1;
+      min-width: 2.5rem;
+      margin-top: 0.1rem;
+    }
+
+    .step-title {
+      font-weight: 900;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.3rem;
+    }
+
+    .step-desc { font-size: 0.88rem; color: var(--gray); }
+
+    /* ── OUTPUT PREVIEW ──────────────────────────── */
+    .output-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .output-card {
+      background: var(--surface);
+      border: 1px solid #1e1e1e;
+      border-left: 3px solid var(--yellow);
+      border-radius: 0 6px 6px 0;
+      padding: 1.25rem 1.25rem 1.25rem 1rem;
+    }
+
+    .output-card-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 1.5px;
+      color: var(--yellow);
+      margin-bottom: 0.4rem;
+    }
+
+    .output-card-desc {
+      font-size: 0.82rem;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+
+    /* ── CTA FINAL ───────────────────────────────── */
+    .cta-final {
+      max-width: 860px;
+      margin: 0 auto 6rem;
+      padding: 3rem 2rem;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid #1e1e1e;
+      border-radius: 8px;
+    }
+
+    .cta-final h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      letter-spacing: 2px;
+      color: var(--yellow);
+      margin-bottom: 0.75rem;
+    }
+
+    .cta-final p { color: var(--gray); margin-bottom: 2rem; font-size: 0.95rem; }
+
+    /* ── FOOTER ──────────────────────────────────── */
+    footer {
+      border-top: 1px solid #1a1a1a;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    footer a { color: var(--yellow); text-decoration: none; }
+
+    /* ── RESPONSIVE ──────────────────────────────── */
+    @media (max-width: 480px) {
+      .cta-group { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+      .trust-sep { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-brand">AI CAREER BUILDER</a>
+    <span class="nav-by">BY @WHERE_LUCHO</span>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="badge">🚀 Powered by Claude · Gratis</span>
+
+    <h1>IMPULSA<br /><span>TU CARRERA</span><br />UTILIZANDO LA IA</h1>
+
+    <p class="hero-sub">
+      Sube tu CV y la IA te da un diagnóstico completo: tu nivel profesional,
+      cómo usar IA para apalancar tu carrera y tus próximos pasos concretos a seguir.
+    </p>
+
+    <div class="cta-group">
+      <a href="https://app.aicareerbuilder.app" class="btn-primary" target="_blank" rel="noopener">
+        Analizar mi CV gratis →
+      </a>
+      <a href="#como-funciona" class="btn-secondary">Ver cómo funciona</a>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust">
+    <div class="trust-item">
+      <span class="trust-num">1</span>
+      <span class="trust-label">análisis gratuito</span>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <span class="trust-num">60s</span>
+      <span class="trust-label">obtén el resultado en</span>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <span class="trust-num">Sí</span>
+      <span class="trust-label">registro previo</span>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <span class="trust-num">PDF</span>
+      <span class="trust-label">o DOCX aceptados</span>
+    </div>
+  </div>
+
+  <!-- OUTPUT SECTIONS -->
+  <section class="section">
+    <p class="section-label">Qué recibes</p>
+    <h2 class="section-title">TU DIAGNÓSTICO COMPLETO</h2>
+
+    <div class="output-grid">
+      <div class="output-card">
+        <div class="output-card-title">RESUMEN DEL PERFIL</div>
+        <div class="output-card-desc">
+          Tu nivel (junior / mid / senior) y un resumen honesto de dónde estás parado hoy.
+        </div>
+      </div>
+      <div class="output-card">
+        <div class="output-card-title">POTENCIAL CON IA</div>
+        <div class="output-card-desc">
+          ¿Cómo puedes potencializar tu carrera con la IA? Específico para tu perfil, no genérico.
+        </div>
+      </div>
+      <div class="output-card">
+        <div class="output-card-title">PRÓXIMOS PASOS</div>
+        <div class="output-card-desc">
+          Un plan de 30-60-90 días para que comiences a tomar acción y construyas la carrera/vida de tus sueños.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="como-funciona">
+    <p class="section-label">Cómo funciona</p>
+    <h2 class="section-title">3 PASOS Y LISTO</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">Verifica tu identidad</div>
+          <div class="step-desc">
+            Ingresas tu nombre y número de teléfono. Recibes un código SMS para confirmar.
+            Sin email, sin contraseña, sin registro.
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">Sube tu CV</div>
+          <div class="step-desc">
+            Arrastras tu CV en PDF o DOCX. La IA lee el contenido completo —
+            experiencia, skills, formación — sin que tengas que resumir nada.
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">Recibes el análisis</div>
+          <div class="step-desc">
+            En menos de 60 segundos tienes tu diagnóstico completo: resumen, potencial con IA,
+            reflexión personal y próximos pasos concretos.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <p class="section-label">Por qué funciona</p>
+    <h2 class="section-title">DISEÑADO PARA PROFESIONALES</h2>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🧠</div>
+        <div class="feature-name">Claude Sonnet 4.6</div>
+        <div class="feature-desc">
+          El mismo modelo que usan las empresas más avanzadas del mundo. No es un template — lee y entiende tu CV.
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <div class="feature-name">Verificación por SMS</div>
+        <div class="feature-desc">
+          Un número real, un análisis real. Así garantizamos que el resultado sea para vos, no un bot.
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🌎</div>
+        <div class="feature-name">Para cualquier industria</div>
+        <div class="feature-desc">
+          Data, finanzas, marketing, ingeniería, recursos humanos. La IA se adapta a tu perfil.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <div style="padding: 0 2rem;">
+    <div class="cta-final">
+      <h2>TU CV MERECE UN DIAGNÓSTICO REAL</h2>
+      <p>Gratis. Sin registro. Tu análisis en menos de 60 segundos.</p>
+      <a href="https://app.aicareerbuilder.app" class="btn-primary" target="_blank" rel="noopener">
+        Analizar mi CV gratis →
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      Hecho por <a href="https://www.instagram.com/where_lucho" target="_blank" rel="noopener">@where_lucho</a>
+      &nbsp;·&nbsp;
+      ¿Querés ir más lejos?
+      <a href="https://calendly.com/luisf-castroc-1995/nueva-reunion" target="_blank" rel="noopener">Agendá una mentoría 1:1 →</a>
+    </p>
+  </footer>
+
+</body>
+</html>
