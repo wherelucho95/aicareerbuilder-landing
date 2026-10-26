@@ -597,5 +597,18 @@
     </p>
   </footer>
 
+  <!-- TikTok: evento ClickButton en los CTAs "Analizar mi CV gratis" -->
+  <script>
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.btn-primary');
+    if (btn && window.ttq) {
+      ttq.track('ClickButton', {
+        content_type: 'product',
+        content_name: 'Analizar mi CV gratis',
+        description: 'CTA landing → app'
+      });
+    }
+  });
+  </script>
 </body>
 </html>
