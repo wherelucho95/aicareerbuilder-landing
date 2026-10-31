@@ -7,11 +7,11 @@
   <!-- ═══════════════════════════════════════════════
        SEO PRIMARIO — leído por Google sin ejecutar JS
   ════════════════════════════════════════════════ -->
-  <title>AI Career Builder — Consigue tu trabajo remoto en USD</title>
+  <title>AI Career Builder — Impulsa tu carrera con IA y consigue trabajo remoto en USD</title>
   <meta name="description"
-        content="Agentes IA para cada etapa del camino: consigue un trabajo remoto en USD y usa el tiempo y los recursos para construir tu proyecto propio. Empieza gratis analizando tu CV." />
+        content="Impulsa tu carrera con inteligencia artificial: analiza tu CV gratis, consigue un trabajo remoto en USD y usa el tiempo y los recursos para construir tu proyecto propio." />
   <meta name="keywords"
-        content="trabajo remoto en dolares, trabajo remoto LATAM, analizar CV con IA, agentes IA carrera, conseguir trabajo remoto sin experiencia, Colombia, LATAM" />
+        content="trabajo remoto en dolares, trabajo remoto LATAM, analizar CV con IA, impulsa tu carrera con IA, agentes IA carrera, conseguir trabajo remoto sin experiencia, Colombia, LATAM" />
   <meta name="author"   content="Luis Castro · @where_lucho" />
   <meta name="robots"   content="index, follow" />
   <link rel="canonical" href="https://aicareerbuilder.app" />
@@ -22,8 +22,8 @@
   ════════════════════════════════════════════════ -->
   <meta property="og:type"         content="website" />
   <meta property="og:url"          content="https://aicareerbuilder.app" />
-  <meta property="og:title"        content="AI Career Builder — Consigue tu trabajo remoto en USD" />
-  <meta property="og:description"  content="El trabajo remoto es el medio. Lo tuyo es el fin. Agentes IA para conseguir un trabajo remoto en USD — y para construir tu proyecto propio. Empieza gratis con tu CV." />
+  <meta property="og:title"        content="AI Career Builder — Impulsa tu carrera con inteligencia artificial" />
+  <meta property="og:description"  content="El trabajo remoto es el medio. Lo tuyo es el fin. Analiza tu CV gratis, consigue un trabajo remoto en USD y construye tu proyecto propio — con agentes IA en cada etapa." />
   <meta property="og:image"        content="https://aicareerbuilder.app/og-preview.png" />
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
@@ -36,8 +36,8 @@
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:site"        content="@where_lucho" />
   <meta name="twitter:creator"     content="@where_lucho" />
-  <meta name="twitter:title"       content="AI Career Builder — Consigue tu trabajo remoto en USD" />
-  <meta name="twitter:description" content="El trabajo remoto es el medio. Lo tuyo es el fin. Agentes IA para cada etapa del camino. Empieza gratis analizando tu CV." />
+  <meta name="twitter:title"       content="AI Career Builder — Impulsa tu carrera con inteligencia artificial" />
+  <meta name="twitter:description" content="El trabajo remoto es el medio. Lo tuyo es el fin. Analiza tu CV gratis y avanza con agentes IA en cada etapa del camino." />
   <meta name="twitter:image"       content="https://aicareerbuilder.app/og-preview.png" />
 
   <!-- ═══════════════════════════════════════════════
@@ -217,10 +217,9 @@
       max-width: 860px;
       margin: 0 auto 4rem;
       padding: 0 2rem;
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      row-gap: 1.5rem;
     }
 
     .trust-item {
@@ -228,7 +227,10 @@
       flex-direction: column;
       align-items: center;
       gap: 0.25rem;
+      padding: 0 1rem;
     }
+
+    .trust-item + .trust-item { border-left: 1px solid #1a1a1a; }
 
     .trust-num {
       font-family: 'Bebas Neue', sans-serif;
@@ -245,12 +247,6 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       text-align: center;
-    }
-
-    .trust-sep {
-      width: 1px;
-      background: #1a1a1a;
-      align-self: stretch;
     }
 
     /* ── SECCIONES ───────────────────────────────── */
@@ -282,55 +278,88 @@
       color: var(--yellow);
     }
 
-    /* ── EL CAMINO (la ecuación) ─────────────────── */
-    .camino {
-      display: flex;
-      align-items: stretch;
-      gap: 0;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .camino-node {
-      flex: 1 1 200px;
-      max-width: 250px;
-      background: var(--surface);
-      border: 1px solid #1e1e1e;
-      border-radius: 8px;
-      padding: 1.5rem 1.25rem;
-      text-align: center;
-    }
-
-    .camino-node.destino { border-color: var(--yellow); }
-
-    .camino-emoji { font-size: 2rem; margin-bottom: 0.6rem; }
-
-    .camino-node-title {
+    /* ── HOOK del hero ───────────────────────────── */
+    .hero-hook {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.3rem;
+      font-size: clamp(1.25rem, 3.2vw, 1.75rem);
       letter-spacing: 1.5px;
       color: var(--white);
-      line-height: 1.15;
-      margin-bottom: 0.4rem;
+      line-height: 1.25;
+      max-width: 620px;
+      margin: 0 auto 0.9rem;
+    }
+    .hero-hook a { color: var(--yellow); text-decoration: none; }
+
+    /* ── EL CAMINO (mapa interactivo de 5 hitos) ─── */
+    .mapa {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.9rem;
+      position: relative;
+      padding-top: 1.2rem;
     }
 
-    .camino-node.destino .camino-node-title { color: var(--yellow); }
-
-    .camino-node-desc {
-      font-size: 0.8rem;
-      color: var(--gray);
-      line-height: 1.5;
+    /* sendero punteado que une los hitos */
+    .mapa::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 4%;
+      right: 4%;
+      border-top: 3px dashed #2e2e2e;
+      z-index: 0;
     }
 
-    .camino-arrow {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 0.8rem;
-      color: var(--yellow);
-      font-size: 1.8rem;
+    .hito {
+      position: relative;
+      z-index: 1;
+      background: var(--surface);
+      border: 2px solid #1e1e1e;
+      box-shadow: 4px 4px 0 rgba(245,229,0,0.08);
+      padding: 1.1rem 0.8rem;
+      text-align: center;
+      transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.2s;
+    }
+    /* El JS marca .reveal al cargar → oculto hasta entrar al viewport.
+       Sin JS (o crawlers) los hitos quedan visibles por default. */
+    .hito.reveal:not(.visible) { opacity: 0; transform: translateY(24px); }
+    .hito:hover { border-color: var(--yellow); transform: translateY(-4px); }
+
+    /* zigzag del sendero en desktop */
+    .hito:nth-child(2) { margin-top: 2.2rem; }
+    .hito:nth-child(4) { margin-top: 2.2rem; }
+
+    .hito-num {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
       font-weight: 900;
+      font-size: 0.62rem;
+      letter-spacing: 2px;
+      color: var(--black);
+      background: var(--yellow);
+      padding: 2px 8px;
+      margin-bottom: 0.6rem;
     }
+
+    .hito-icon { font-size: 1.7rem; margin-bottom: 0.4rem; }
+
+    .hito-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 1.2px;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 0.35rem;
+    }
+
+    .hito-desc { font-size: 0.74rem; color: var(--gray); line-height: 1.45; }
+
+    .hito.meta-final {
+      border: 2px solid var(--yellow);
+      box-shadow: 5px 5px 0 rgba(245,229,0,0.3);
+      background: #15140a;
+    }
+    .hito.meta-final .hito-title { color: var(--yellow); }
 
     .camino-tagline {
       text-align: center;
@@ -338,10 +367,20 @@
       font-size: clamp(1.3rem, 3.5vw, 1.9rem);
       letter-spacing: 2px;
       color: var(--gray);
-      margin-top: 2.2rem;
+      margin-top: 2.4rem;
     }
 
     .camino-tagline em { font-style: normal; color: var(--yellow); }
+
+    @media (max-width: 720px) {
+      .mapa { grid-template-columns: 1fr; gap: 0.8rem; padding-left: 1.4rem; }
+      .mapa::before {
+        top: 2%; bottom: 2%; left: 0.45rem; right: auto;
+        border-top: none; border-left: 3px dashed #2e2e2e;
+      }
+      .hito:nth-child(2), .hito:nth-child(4) { margin-top: 0; }
+      .hito { text-align: left; padding: 1rem 1.1rem; }
+    }
 
     /* ── HERRAMIENTAS 3+3 ────────────────────────── */
     .etapa {
@@ -517,12 +556,13 @@
       .camino { flex-direction: column; align-items: center; }
       .camino-node { max-width: 100%; width: 100%; }
       .camino-arrow { transform: rotate(90deg); padding: 0.4rem 0; }
+      .trust { grid-template-columns: repeat(2, 1fr); padding: 0 1rem; }
+      .trust-item:nth-child(odd) { border-left: none; }
     }
 
     @media (max-width: 480px) {
       .cta-group { flex-direction: column; align-items: center; }
       .btn-primary, .btn-secondary { width: 100%; text-align: center; }
-      .trust-sep { display: none; }
     }
   </style>
 
@@ -548,16 +588,20 @@
     <span class="nav-by">BY @WHERE_LUCHO</span>
   </nav>
 
-  <!-- HERO (nivel 1 — la puerta) -->
+  <!-- HERO (paraguas carrera+IA + promesa concreta) -->
   <section class="hero">
     <span class="badge">🤖 Agentes IA · Empieza gratis</span>
 
-    <h1>CONSIGUE UN<br /><span>TRABAJO REMOTO</span><br />EN USD</h1>
+    <h1>IMPULSA<br /><span>TU CARRERA</span><br />CON IA</h1>
+
+    <p class="hero-hook">
+      ¿Cansado de no tener un plan de carrera y sentir que la vida se te va
+      de las manos? <a href="#el-camino">Este es el camino que yo te propongo ↓</a>
+    </p>
 
     <p class="hero-sub">
-      Agentes IA para cada etapa del camino: inglés, certificaciones, vacantes y
-      entrevistas. <strong>Empieza gratis</strong>: sube tu CV y descubre a qué
-      roles remotos encajas hoy.
+      Analiza tu CV gratis, consigue un <strong>trabajo remoto en USD</strong> y
+      construye lo tuyo — con agentes IA en cada etapa.
     </p>
 
     <div class="cta-group">
@@ -574,45 +618,55 @@
       <span class="trust-num">1</span>
       <span class="trust-label">análisis gratuito</span>
     </div>
-    <div class="trust-sep"></div>
     <div class="trust-item">
-      <span class="trust-num">60s</span>
-      <span class="trust-label">obtén el resultado en</span>
+      <span class="trust-num">60 seg</span>
+      <span class="trust-label">recibe tu resultado</span>
     </div>
-    <div class="trust-sep"></div>
-    <div class="trust-item">
-      <span class="trust-num">6</span>
-      <span class="trust-label">agentes IA en la plataforma</span>
-    </div>
-    <div class="trust-sep"></div>
     <div class="trust-item">
       <span class="trust-num">PDF</span>
       <span class="trust-label">o DOCX aceptados</span>
     </div>
+    <div class="trust-item">
+      <span class="trust-num">6</span>
+      <span class="trust-label">agentes de IA</span>
+    </div>
   </div>
 
-  <!-- EL CAMINO (la ecuación — nivel 3 como dirección) -->
+  <!-- EL CAMINO (mapa interactivo de 5 hitos — termina en el proyecto propio) -->
   <section class="section" id="el-camino">
-    <p class="section-label">El camino que proponemos</p>
+    <p class="section-label">El camino que yo te propongo</p>
     <h2 class="section-title">EL EMPLEO NO ES LA META. <em>ES LA PLATAFORMA.</em></h2>
 
-    <div class="camino">
-      <div class="camino-node">
-        <div class="camino-emoji">💼</div>
-        <div class="camino-node-title">UN BUEN TRABAJO REMOTO PAGO EN DÓLARES</div>
-        <div class="camino-node-desc">La base: paga mejor que el empleo local y te devuelve tus horas.</div>
+    <div class="mapa">
+      <div class="hito">
+        <span class="hito-num">PASO 01</span>
+        <div class="hito-icon">📄</div>
+        <div class="hito-title">ANALIZA TU PERFIL</div>
+        <div class="hito-desc">Sube tu CV gratis y descubre dónde estás parado hoy.</div>
       </div>
-      <div class="camino-arrow">→</div>
-      <div class="camino-node">
-        <div class="camino-emoji">⏱️💰</div>
-        <div class="camino-node-title">MÁS TIEMPO + MAYORES RECURSOS</div>
-        <div class="camino-node-desc">Lo que la base te compra, mes a mes.</div>
+      <div class="hito">
+        <span class="hito-num">PASO 02</span>
+        <div class="hito-icon">📈</div>
+        <div class="hito-title">MEJORA TU PERFIL</div>
+        <div class="hito-desc">Inglés, certificaciones y un CV que pasa filtros ATS.</div>
       </div>
-      <div class="camino-arrow">→</div>
-      <div class="camino-node destino">
-        <div class="camino-emoji">🚀</div>
-        <div class="camino-node-title">CREAR TU PROYECTO PROPIO</div>
-        <div class="camino-node-desc">Construir lo tuyo — con piso, sin saltos al vacío.</div>
+      <div class="hito">
+        <span class="hito-num">PASO 03</span>
+        <div class="hito-icon">💼</div>
+        <div class="hito-title">TRABAJO REMOTO EN USD</div>
+        <div class="hito-desc">Accede a oportunidades que pagan en dólares.</div>
+      </div>
+      <div class="hito">
+        <span class="hito-num">PASO 04</span>
+        <div class="hito-icon">⏱️💰</div>
+        <div class="hito-title">GANA TIEMPO + RECURSOS</div>
+        <div class="hito-desc">La base te devuelve tus horas y te da recursos.</div>
+      </div>
+      <div class="hito meta-final">
+        <span class="hito-num">🏁 META</span>
+        <div class="hito-icon">🚀</div>
+        <div class="hito-title">TU PROYECTO PROPIO</div>
+        <div class="hito-desc">Usa esa libertad para construir lo tuyo — con piso, sin saltos al vacío.</div>
       </div>
     </div>
 
@@ -809,6 +863,25 @@
       Hecho por <a href="https://www.instagram.com/where_lucho" target="_blank" rel="noopener">@where_lucho</a>
     </p>
   </footer>
+
+  <!-- Scroll-reveal del mapa del camino (hitos aparecen en secuencia) -->
+  <script>
+  (function () {
+    var hitos = document.querySelectorAll('.hito');
+    if (!('IntersectionObserver' in window)) { return; }  // sin IO = visibles ya
+    hitos.forEach(function (h) { h.classList.add('reveal'); });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var idx = Array.prototype.indexOf.call(hitos, entry.target);
+          setTimeout(function () { entry.target.classList.add('visible'); }, idx * 140);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.25 });
+    hitos.forEach(function (h) { io.observe(h); });
+  })();
+  </script>
 
   <!-- TikTok: evento ClickButton en los CTAs hacia la app -->
   <script>
