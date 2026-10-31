@@ -7,11 +7,11 @@
   <!-- ═══════════════════════════════════════════════
        SEO PRIMARIO — leído por Google sin ejecutar JS
   ════════════════════════════════════════════════ -->
-  <title>AI Career Builder — Analiza tu CV con IA gratis</title>
+  <title>AI Career Builder — Consigue tu trabajo remoto en USD</title>
   <meta name="description"
-        content="Sube tu CV y la IA te da un diagnóstico completo: tu nivel profesional, cómo usar IA para apalancar tu carrera y tus próximos pasos concretos a seguir. Gratis. Sin registro." />
+        content="Agentes IA para cada etapa del camino: consigue un trabajo remoto en USD y usa el tiempo y los recursos para construir tu proyecto propio. Empieza gratis analizando tu CV." />
   <meta name="keywords"
-        content="analizar CV con IA, diagnóstico de carrera, inteligencia artificial, Colombia, LATAM, potencial IA, próximos pasos carrera" />
+        content="trabajo remoto en dolares, trabajo remoto LATAM, analizar CV con IA, agentes IA carrera, conseguir trabajo remoto sin experiencia, Colombia, LATAM" />
   <meta name="author"   content="Luis Castro · @where_lucho" />
   <meta name="robots"   content="index, follow" />
   <link rel="canonical" href="https://aicareerbuilder.app" />
@@ -22,8 +22,8 @@
   ════════════════════════════════════════════════ -->
   <meta property="og:type"         content="website" />
   <meta property="og:url"          content="https://aicareerbuilder.app" />
-  <meta property="og:title"        content="AI Career Builder — Analiza tu CV con IA gratis" />
-  <meta property="og:description"  content="Sube tu CV y la IA te da un diagnóstico completo: tu nivel profesional, cómo usar IA para apalancar tu carrera y tus próximos pasos. Gratis." />
+  <meta property="og:title"        content="AI Career Builder — Consigue tu trabajo remoto en USD" />
+  <meta property="og:description"  content="El trabajo remoto es el medio. Lo tuyo es el fin. Agentes IA para conseguir un trabajo remoto en USD — y para construir tu proyecto propio. Empieza gratis con tu CV." />
   <meta property="og:image"        content="https://aicareerbuilder.app/og-preview.png" />
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
@@ -36,8 +36,8 @@
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:site"        content="@where_lucho" />
   <meta name="twitter:creator"     content="@where_lucho" />
-  <meta name="twitter:title"       content="AI Career Builder — Analiza tu CV con IA gratis" />
-  <meta name="twitter:description" content="Sube tu CV y la IA te da diagnóstico de nivel, cómo apalancar tu carrera con IA y próximos pasos concretos." />
+  <meta name="twitter:title"       content="AI Career Builder — Consigue tu trabajo remoto en USD" />
+  <meta name="twitter:description" content="El trabajo remoto es el medio. Lo tuyo es el fin. Agentes IA para cada etapa del camino. Empieza gratis analizando tu CV." />
   <meta name="twitter:image"       content="https://aicareerbuilder.app/og-preview.png" />
 
   <!-- ═══════════════════════════════════════════════
@@ -49,7 +49,7 @@
     "@type": "WebApplication",
     "name": "AI Career Builder",
     "url": "https://aicareerbuilder.app",
-    "description": "Analiza tu CV con IA y recibe un diagnóstico completo de carrera: nivel profesional, cómo apalancar tu carrera con inteligencia artificial y próximos pasos concretos.",
+    "description": "Plataforma de agentes IA para conseguir un trabajo remoto en USD desde LATAM: análisis de CV gratis, inglés, certificaciones, vacantes y entrevistas — y herramientas para construir tu proyecto propio.",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "inLanguage": "es",
@@ -57,7 +57,7 @@
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD",
-      "description": "1 análisis gratuito por usuario"
+      "description": "1 análisis de CV gratuito por usuario"
     },
     "author": {
       "@type": "Person",
@@ -147,7 +147,7 @@
 
     h1 {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(3.5rem, 9vw, 7rem);
+      font-size: clamp(3.2rem, 8.5vw, 6.5rem);
       color: var(--yellow);
       letter-spacing: 4px;
       line-height: 0.95;
@@ -159,9 +159,11 @@
     .hero-sub {
       font-size: clamp(1rem, 2.5vw, 1.2rem);
       color: var(--gray);
-      max-width: 560px;
+      max-width: 580px;
       margin: 0 auto 2.5rem;
     }
+
+    .hero-sub strong { color: var(--white); }
 
     .cta-group {
       display: flex;
@@ -251,7 +253,7 @@
       align-self: stretch;
     }
 
-    /* ── FEATURES ────────────────────────────────── */
+    /* ── SECCIONES ───────────────────────────────── */
     .section {
       max-width: 860px;
       margin: 0 auto 5rem;
@@ -273,6 +275,105 @@
       letter-spacing: 2px;
       color: var(--white);
       margin-bottom: 2.5rem;
+    }
+
+    .section-title em {
+      font-style: normal;
+      color: var(--yellow);
+    }
+
+    /* ── EL CAMINO (la ecuación) ─────────────────── */
+    .camino {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .camino-node {
+      flex: 1 1 200px;
+      max-width: 250px;
+      background: var(--surface);
+      border: 1px solid #1e1e1e;
+      border-radius: 8px;
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+    }
+
+    .camino-node.destino { border-color: var(--yellow); }
+
+    .camino-emoji { font-size: 2rem; margin-bottom: 0.6rem; }
+
+    .camino-node-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 1.5px;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 0.4rem;
+    }
+
+    .camino-node.destino .camino-node-title { color: var(--yellow); }
+
+    .camino-node-desc {
+      font-size: 0.8rem;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+
+    .camino-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0.8rem;
+      color: var(--yellow);
+      font-size: 1.8rem;
+      font-weight: 900;
+    }
+
+    .camino-tagline {
+      text-align: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.3rem, 3.5vw, 1.9rem);
+      letter-spacing: 2px;
+      color: var(--gray);
+      margin-top: 2.2rem;
+    }
+
+    .camino-tagline em { font-style: normal; color: var(--yellow); }
+
+    /* ── HERRAMIENTAS 3+3 ────────────────────────── */
+    .etapa {
+      margin-bottom: 2.5rem;
+    }
+
+    .etapa-head {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .etapa-pill {
+      font-size: 0.65rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--yellow);
+      padding: 0.2rem 0.7rem;
+      border-radius: 2rem;
+    }
+
+    .etapa-pill.dos { background: #2a2a2a; color: var(--gray); }
+
+    .etapa-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 1.5px;
+      color: var(--white);
     }
 
     .features-grid {
@@ -403,7 +504,21 @@
 
     footer a { color: var(--yellow); text-decoration: none; }
 
+    .footer-tagline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      color: #555;
+      margin-bottom: 0.4rem;
+    }
+
     /* ── RESPONSIVE ──────────────────────────────── */
+    @media (max-width: 640px) {
+      .camino { flex-direction: column; align-items: center; }
+      .camino-node { max-width: 100%; width: 100%; }
+      .camino-arrow { transform: rotate(90deg); padding: 0.4rem 0; }
+    }
+
     @media (max-width: 480px) {
       .cta-group { flex-direction: column; align-items: center; }
       .btn-primary, .btn-secondary { width: 100%; text-align: center; }
@@ -433,22 +548,23 @@
     <span class="nav-by">BY @WHERE_LUCHO</span>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO (nivel 1 — la puerta) -->
   <section class="hero">
-    <span class="badge">🚀 Powered by Claude · Gratis</span>
+    <span class="badge">🤖 Agentes IA · Empieza gratis</span>
 
-    <h1>IMPULSA<br /><span>TU CARRERA</span><br />UTILIZANDO LA IA</h1>
+    <h1>CONSIGUE UN<br /><span>TRABAJO REMOTO</span><br />EN USD</h1>
 
     <p class="hero-sub">
-      Sube tu CV y la IA te da un diagnóstico completo: tu nivel profesional,
-      cómo usar IA para apalancar tu carrera y tus próximos pasos concretos a seguir.
+      Agentes IA para cada etapa del camino: inglés, certificaciones, vacantes y
+      entrevistas. <strong>Empieza gratis</strong>: sube tu CV y descubre a qué
+      roles remotos encajas hoy.
     </p>
 
     <div class="cta-group">
       <a href="https://app.aicareerbuilder.app" class="btn-primary" target="_blank" rel="noopener">
         Analizar mi CV gratis →
       </a>
-      <a href="#como-funciona" class="btn-secondary">Ver cómo funciona</a>
+      <a href="#el-camino" class="btn-secondary">Ver el camino</a>
     </div>
   </section>
 
@@ -465,8 +581,8 @@
     </div>
     <div class="trust-sep"></div>
     <div class="trust-item">
-      <span class="trust-num">Sí</span>
-      <span class="trust-label">registro previo</span>
+      <span class="trust-num">6</span>
+      <span class="trust-label">agentes IA en la plataforma</span>
     </div>
     <div class="trust-sep"></div>
     <div class="trust-item">
@@ -475,10 +591,110 @@
     </div>
   </div>
 
-  <!-- OUTPUT SECTIONS -->
+  <!-- EL CAMINO (la ecuación — nivel 3 como dirección) -->
+  <section class="section" id="el-camino">
+    <p class="section-label">El camino que proponemos</p>
+    <h2 class="section-title">EL EMPLEO NO ES LA META. <em>ES LA PLATAFORMA.</em></h2>
+
+    <div class="camino">
+      <div class="camino-node">
+        <div class="camino-emoji">💼</div>
+        <div class="camino-node-title">UN BUEN TRABAJO REMOTO PAGO EN DÓLARES</div>
+        <div class="camino-node-desc">La base: paga mejor que el empleo local y te devuelve tus horas.</div>
+      </div>
+      <div class="camino-arrow">→</div>
+      <div class="camino-node">
+        <div class="camino-emoji">⏱️💰</div>
+        <div class="camino-node-title">MÁS TIEMPO + MAYORES RECURSOS</div>
+        <div class="camino-node-desc">Lo que la base te compra, mes a mes.</div>
+      </div>
+      <div class="camino-arrow">→</div>
+      <div class="camino-node destino">
+        <div class="camino-emoji">🚀</div>
+        <div class="camino-node-title">CREAR TU PROYECTO PROPIO</div>
+        <div class="camino-node-desc">Construir lo tuyo — con piso, sin saltos al vacío.</div>
+      </div>
+    </div>
+
+    <p class="camino-tagline">EL TRABAJO REMOTO ES EL MEDIO. <em>LO TUYO ES EL FIN.</em></p>
+  </section>
+
+  <!-- LAS HERRAMIENTAS 3+3 -->
   <section class="section">
-    <p class="section-label">Qué recibes</p>
-    <h2 class="section-title">TU DIAGNÓSTICO COMPLETO</h2>
+    <p class="section-label">Las herramientas</p>
+    <h2 class="section-title">3 AGENTES PARA LA BASE. <em>3 PARA LO TUYO.</em></h2>
+
+    <div class="etapa">
+      <div class="etapa-head">
+        <span class="etapa-pill">Etapa 1</span>
+        <span class="etapa-title">🌎 Conseguir el trabajo remoto</span>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🗣️</div>
+          <div class="feature-name">AI English Teacher</div>
+          <div class="feature-desc">
+            Inglés para entrevistas y trabajo tech — conversación, pronunciación y flashcards con IA. Es lo que más mueve el sueldo.
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📜</div>
+          <div class="feature-name">AI Exam Certification</div>
+          <div class="feature-desc">
+            Simuladores de certificaciones tech (AWS, Azure, Terraform…) con tutor IA que explica cada respuesta.
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <div class="feature-name">AI Job Hunter</div>
+          <div class="feature-desc">
+            Vacantes remotas en USD + CV a medida de cada una + preparación de entrevistas. Incluye roles de entrada sin título.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="etapa">
+      <div class="etapa-head">
+        <span class="etapa-pill dos">Etapa 2</span>
+        <span class="etapa-title">🚀 Construir lo tuyo</span>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <div class="feature-name">AI Marketing Assistant</div>
+          <div class="feature-desc">
+            Tendencias reales de tu nicho, marca y estrategia de contenido para tu proyecto — sin humo.
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <div class="feature-name">AI Content Creator</div>
+          <div class="feature-desc">
+            Carruseles, posts e infografías para LinkedIn e Instagram, con tu identidad de marca.
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎬</div>
+          <div class="feature-name">AI Video Creator</div>
+          <div class="feature-desc">
+            Video corto para tu proyecto sin salir en cámara: B-roll, personajes 2D y data viz.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-group" style="margin-top:1.5rem;">
+      <a href="https://app.aicareerbuilder.app" class="btn-primary" target="_blank" rel="noopener">
+        Empezar gratis con mi CV →
+      </a>
+    </div>
+  </section>
+
+  <!-- QUÉ RECIBES GRATIS -->
+  <section class="section">
+    <p class="section-label">La puerta de entrada — gratis</p>
+    <h2 class="section-title">TU DIAGNÓSTICO DE CARRERA</h2>
 
     <div class="output-grid">
       <div class="output-card">
@@ -488,15 +704,15 @@
         </div>
       </div>
       <div class="output-card">
-        <div class="output-card-title">POTENCIAL CON IA</div>
+        <div class="output-card-title">CARGOS REMOTOS OBJETIVO</div>
         <div class="output-card-desc">
-          ¿Cómo puedes potencializar tu carrera con la IA? Específico para tu perfil, no genérico.
+          A qué roles remotos en USD encaja tu CV hoy — y por qué.
         </div>
       </div>
       <div class="output-card">
         <div class="output-card-title">PRÓXIMOS PASOS</div>
         <div class="output-card-desc">
-          Un plan de 30-60-90 días para que comiences a tomar acción y construyas la carrera/vida de tus sueños.
+          Qué te falta para pasar los filtros (ATS, inglés, certificaciones) y con qué herramienta cerrar cada gap.
         </div>
       </div>
     </div>
@@ -535,52 +751,51 @@
         <div>
           <div class="step-title">Recibes el análisis</div>
           <div class="step-desc">
-            En menos de 60 segundos tienes tu diagnóstico completo: resumen, potencial con IA,
-            reflexión personal y próximos pasos concretos.
+            En menos de 60 segundos tienes tu diagnóstico — y acceso a los agentes IA
+            para ejecutar cada etapa del camino.
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
+  <!-- POR QUÉ FUNCIONA -->
   <section class="section">
     <p class="section-label">Por qué funciona</p>
-    <h2 class="section-title">DISEÑADO PARA PROFESIONALES</h2>
+    <h2 class="section-title">SIN HUMO, CON HERRAMIENTAS</h2>
 
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">🧠</div>
-        <div class="feature-name">Claude Sonnet 4.6</div>
+        <div class="feature-name">IA de verdad</div>
         <div class="feature-desc">
-          El mismo modelo que usan las empresas más avanzadas del mundo. No es un template — lee y entiende tu CV.
+          Claude, el mismo modelo que usan las empresas más avanzadas del mundo. No es un template — lee y entiende tu caso.
         </div>
       </div>
 
       <div class="feature-card">
-        <div class="feature-icon">🔒</div>
-        <div class="feature-name">Verificación por SMS</div>
+        <div class="feature-icon">🧗</div>
+        <div class="feature-name">Un camino, en orden</div>
         <div class="feature-desc">
-          Un número real, un análisis real. Así garantizamos que el resultado sea para vos, no un bot.
+          Primero la base (el empleo remoto), después lo tuyo. Nada de "renuncia y emprende" sin piso.
         </div>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon">🌎</div>
-        <div class="feature-name">Para cualquier industria</div>
+        <div class="feature-name">Hecho para LATAM</div>
         <div class="feature-desc">
-          Data, finanzas, marketing, ingeniería, recursos humanos. La IA se adapta a tu perfil.
+          En español, con precios de acá y enfocado en el mercado remoto en USD que sí contrata en la región.
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- CTA FINAL -->
   <div style="padding: 0 2rem;">
     <div class="cta-final">
-      <h2>TU CV MERECE UN DIAGNÓSTICO REAL</h2>
-      <p>Gratis. Sin registro. Tu análisis en menos de 60 segundos.</p>
+      <h2>EL PRIMER PASO ES GRATIS</h2>
+      <p>Sube tu CV y descubre a qué roles remotos en USD encajas. Tu análisis en menos de 60 segundos.</p>
       <a href="https://app.aicareerbuilder.app" class="btn-primary" target="_blank" rel="noopener">
         Analizar mi CV gratis →
       </a>
@@ -589,22 +804,20 @@
 
   <!-- FOOTER -->
   <footer>
+    <p class="footer-tagline">EL TRABAJO REMOTO ES EL MEDIO. LO TUYO ES EL FIN.</p>
     <p>
       Hecho por <a href="https://www.instagram.com/where_lucho" target="_blank" rel="noopener">@where_lucho</a>
-      &nbsp;·&nbsp;
-      ¿Querés ir más lejos?
-      <a href="https://calendly.com/luisf-castroc-1995/nueva-reunion" target="_blank" rel="noopener">Agendá una mentoría 1:1 →</a>
     </p>
   </footer>
 
-  <!-- TikTok: evento ClickButton en los CTAs "Analizar mi CV gratis" -->
+  <!-- TikTok: evento ClickButton en los CTAs hacia la app -->
   <script>
   document.addEventListener('click', function (e) {
     var btn = e.target.closest('.btn-primary');
     if (btn && window.ttq) {
       ttq.track('ClickButton', {
         content_type: 'product',
-        content_name: 'Analizar mi CV gratis',
+        content_name: btn.textContent.trim(),
         description: 'CTA landing → app'
       });
     }
