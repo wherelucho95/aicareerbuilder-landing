@@ -12,7 +12,11 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    # CSP en Report-Only primero (no rompe nada; solo reporta). Cuando los
+    # reportes del navegador confirmen 0 violaciones, renombrar a
+    # Content-Security-Policy. Orígenes: TikTok (pixel) y Google Fonts.
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' https://analytics.tiktok.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://analytics.tiktok.com; connect-src 'self' https://analytics.tiktok.com https://analytics-ipv6.tiktokw.us; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
 
 [[headers]]
   for = "/robots.txt"
