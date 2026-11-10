@@ -7,9 +7,9 @@
   <!-- ═══════════════════════════════════════════════
        SEO PRIMARIO — leído por Google sin ejecutar JS
   ════════════════════════════════════════════════ -->
-  <title>AI Career Builder — Impulsa tu carrera con IA y consigue trabajo remoto en USD</title>
+  <title>AI Career Builder — Impulsa tu carrera con IA hacia un trabajo remoto en USD</title>
   <meta name="description"
-        content="Impulsa tu carrera con inteligencia artificial: analiza tu CV gratis, consigue un trabajo remoto en USD y usa el tiempo y los recursos para construir tu proyecto propio." />
+        content="Impulsa tu carrera con inteligencia artificial: analiza tu CV gratis, prepárate con agentes IA para conseguir un trabajo remoto en USD y usa ese tiempo y esos recursos para construir tu proyecto propio." />
   <meta name="keywords"
         content="trabajo remoto en dolares, trabajo remoto LATAM, analizar CV con IA, impulsa tu carrera con IA, agentes IA carrera, conseguir trabajo remoto sin experiencia, Colombia, LATAM" />
   <meta name="author"   content="Luis Castro · @where_lucho" />
@@ -23,7 +23,7 @@
   <meta property="og:type"         content="website" />
   <meta property="og:url"          content="https://aicareerbuilder.app" />
   <meta property="og:title"        content="AI Career Builder — Impulsa tu carrera con inteligencia artificial" />
-  <meta property="og:description"  content="El trabajo remoto es el medio. Lo tuyo es el fin. Analiza tu CV gratis, consigue un trabajo remoto en USD y construye tu proyecto propio — con agentes IA en cada etapa." />
+  <meta property="og:description"  content="El trabajo remoto es el medio. Lo tuyo es el fin. Analiza tu CV gratis: te ayudamos a conseguir un trabajo remoto en USD y a construir tu proyecto propio, con agentes IA en cada etapa." />
   <meta property="og:image"        content="https://aicareerbuilder.app/og-preview.png" />
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
@@ -49,7 +49,7 @@
     "@type": "WebApplication",
     "name": "AI Career Builder",
     "url": "https://aicareerbuilder.app",
-    "description": "Plataforma de agentes IA para conseguir un trabajo remoto en USD desde LATAM: análisis de CV gratis, inglés, certificaciones, vacantes y entrevistas — y herramientas para construir tu proyecto propio.",
+    "description": "Plataforma de agentes IA que te ayudan a conseguir un trabajo remoto en USD desde LATAM: análisis de CV gratis, inglés, certificaciones, vacantes y entrevistas — y herramientas para construir tu proyecto propio.",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "inLanguage": "es",
@@ -541,15 +541,25 @@
       letter-spacing: 0.5px;
     }
 
+    footer p + p { margin-top: 0.5rem; }
     footer a { color: var(--yellow); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
 
     .footer-tagline {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1rem;
       letter-spacing: 2px;
       color: #555;
-      margin-bottom: 0.4rem;
     }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.35rem 1.25rem;
+    }
+
+    .footer-legal { font-weight: 400; }
 
     /* ── RESPONSIVE ──────────────────────────────── */
     @media (max-width: 640px) {
@@ -565,20 +575,6 @@
       .btn-primary, .btn-secondary { width: 100%; text-align: center; }
     }
   </style>
-
-  <!-- TikTok Pixel Code Start -->
-  <script>
-  !function (w, d, t) {
-    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-  var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-  ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-
-
-    ttq.load('DBF7LIRC77U5A2ME9O7G');
-    ttq.page();
-  }(window, document, 'ttq');
-  </script>
-  <!-- TikTok Pixel Code End -->
 </head>
 <body>
 
@@ -600,8 +596,8 @@
     </p>
 
     <p class="hero-sub">
-      Analiza tu CV gratis, consigue un <strong>trabajo remoto en USD</strong> y
-      construye lo tuyo — con agentes IA en cada etapa.
+      Analiza tu CV gratis. Te ayudamos a conseguir un <strong>trabajo remoto en USD</strong>
+      y a construir lo tuyo — con agentes IA en cada etapa.
     </p>
 
     <div class="cta-group">
@@ -619,7 +615,7 @@
       <span class="trust-label">análisis gratuito</span>
     </div>
     <div class="trust-item">
-      <span class="trust-num">60 seg</span>
+      <span class="trust-num">En minutos</span>
       <span class="trust-label">recibe tu resultado</span>
     </div>
     <div class="trust-item">
@@ -783,8 +779,8 @@
         <div>
           <div class="step-title">Verifica tu identidad</div>
           <div class="step-desc">
-            Ingresas tu nombre y número de teléfono. Recibes un código SMS para confirmar.
-            Sin email, sin contraseña, sin registro.
+            Ingresas tu nombre y número de celular, y recibes un código por SMS para confirmar.
+            Sin contraseña: solo verificamos tu celular con ese código.
           </div>
         </div>
       </div>
@@ -805,7 +801,7 @@
         <div>
           <div class="step-title">Recibes el análisis</div>
           <div class="step-desc">
-            En menos de 60 segundos tienes tu diagnóstico — y acceso a los agentes IA
+            En minutos tienes tu diagnóstico — y acceso a los agentes IA
             para ejecutar cada etapa del camino.
           </div>
         </div>
@@ -839,7 +835,7 @@
         <div class="feature-icon">🌎</div>
         <div class="feature-name">Hecho para LATAM</div>
         <div class="feature-desc">
-          En español, con precios de acá y enfocado en el mercado remoto en USD que sí contrata en la región.
+          En español, con precios pensados para LATAM y cobrados en USD, y enfocado en el mercado remoto en dólares que sí contrata en la región.
         </div>
       </div>
     </div>
@@ -849,7 +845,7 @@
   <div style="padding: 0 2rem;">
     <div class="cta-final">
       <h2>EL PRIMER PASO ES GRATIS</h2>
-      <p>Sube tu CV y descubre a qué roles remotos en USD encajas. Tu análisis en menos de 60 segundos.</p>
+      <p>Sube tu CV y descubre a qué roles remotos en USD encajas. Tu análisis, en minutos.</p>
       <a href="https://app.aicareerbuilder.app" class="btn-primary" target="_blank" rel="noopener">
         Analizar mi CV gratis →
       </a>
@@ -859,6 +855,20 @@
   <!-- FOOTER -->
   <footer>
     <p class="footer-tagline">EL TRABAJO REMOTO ES EL MEDIO. LO TUYO ES EL FIN.</p>
+    <p class="footer-links">
+      <a href="/terminos">Términos y condiciones</a>
+      <a href="/privacidad">Política de datos</a>
+      <a href="/reembolsos">Reembolsos</a>
+    </p>
+    <p>
+      Soporte: <a href="mailto:soporte@aicareerbuilder.app">soporte@aicareerbuilder.app</a>
+      · WhatsApp <a href="https://wa.me/573208582372" target="_blank" rel="noopener">+57 320 858 2372</a>
+    </p>
+    <p class="footer-legal">Luis Felipe Castro Calderón · NIT 1022410623-9 · Bogotá D.C., Colombia</p>
+    <p class="footer-legal">
+      Protección al consumidor:
+      <a href="https://www.sic.gov.co" target="_blank" rel="noopener">Superintendencia de Industria y Comercio</a>
+    </p>
     <p>
       Hecho por <a href="https://www.instagram.com/where_lucho" target="_blank" rel="noopener">@where_lucho</a>
     </p>
@@ -881,20 +891,6 @@
     }, { threshold: 0.25 });
     hitos.forEach(function (h) { io.observe(h); });
   })();
-  </script>
-
-  <!-- TikTok: evento ClickButton en los CTAs hacia la app -->
-  <script>
-  document.addEventListener('click', function (e) {
-    var btn = e.target.closest('.btn-primary');
-    if (btn && window.ttq) {
-      ttq.track('ClickButton', {
-        content_type: 'product',
-        content_name: btn.textContent.trim(),
-        description: 'CTA landing → app'
-      });
-    }
-  });
   </script>
 </body>
 </html>
