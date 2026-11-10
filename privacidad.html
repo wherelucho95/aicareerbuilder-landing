@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Tratamiento de Datos Personales — AI Career Builder</title>
+  <meta name="description" content="Cómo AI Career Builder recoge, usa, protege y conserva sus datos personales, y cómo ejercer sus derechos como titular (Ley 1581 de 2012)." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aicareerbuilder.app/privacidad" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://aicareerbuilder.app/privacidad" />
+  <meta property="og:title" content="Política de Tratamiento de Datos Personales — AI Career Builder" />
+  <meta property="og:description" content="Cómo AI Career Builder recoge, usa, protege y conserva sus datos personales, y cómo ejercer sus derechos como titular (Ley 1581 de 2012)." />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:site_name" content="AI Career Builder" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700;900&display=swap"
+        rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --yellow:  #F5E500;
+      --black:   #0A0A0A;
+      --white:   #FFFFFF;
+      --gray:    #888888;
+      --text:    #D9D9D9;
+      --surface: #111111;
+      --line:    #262626;
+    }
+
+    body {
+      background-color: var(--black);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* ── BARRA SUPERIOR ──────────────────────────── */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.1rem 1.25rem;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 3px;
+      color: var(--yellow);
+      text-decoration: none;
+    }
+
+    .back {
+      color: var(--white);
+      border: 1px solid #2a2a2a;
+      border-radius: 4px;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .back:hover { border-color: var(--yellow); color: var(--yellow); }
+
+    /* ── DOCUMENTO ───────────────────────────────── */
+    .doc {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    .doc h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-weight: 400;
+      font-size: clamp(2.1rem, 6vw, 3rem);
+      letter-spacing: 2px;
+      line-height: 1.05;
+      color: var(--yellow);
+      margin-bottom: 1rem;
+    }
+
+    .doc h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-weight: 400;
+      font-size: 1.75rem;
+      letter-spacing: 1.5px;
+      line-height: 1.15;
+      color: var(--white);
+      margin: 2.75rem 0 0.9rem;
+    }
+
+    .doc h3 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--white);
+      margin: 1.9rem 0 0.6rem;
+    }
+
+    .doc h2, .doc h3 { scroll-margin-top: 1rem; }
+
+    .doc p, .doc ul, .doc ol, .doc blockquote, .table-wrap { margin-bottom: 1rem; }
+    .doc ul, .doc ol { padding-left: 1.4rem; }
+    .doc li { margin-bottom: 0.35rem; }
+    .doc li > ul, .doc li > ol { margin: 0.4rem 0 0; }
+    .doc strong { color: var(--white); }
+
+    .doc a {
+      color: var(--yellow);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      overflow-wrap: anywhere;
+    }
+
+    .doc code {
+      font-family: ui-monospace, Consolas, monospace;
+      font-size: 0.88em;
+      background: #1a1a1a;
+      color: #EEEEEE;
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+    }
+
+    .doc hr { border: 0; border-top: 1px solid #222; margin: 2rem 0; }
+
+    .doc blockquote {
+      border-left: 3px solid var(--yellow);
+      background: var(--surface);
+      padding: 0.9rem 1.1rem;
+    }
+
+    .doc blockquote p:last-child { margin-bottom: 0; }
+
+    /* Tablas: scroll horizontal propio en pantallas angostas */
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    .doc table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .doc table.cols-3 { min-width: 34rem; }
+    .doc table.cols-4 { min-width: 42rem; }
+
+    .doc th, .doc td {
+      text-align: left;
+      vertical-align: top;
+      padding: 0.65rem 0.8rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .doc th { background: #161616; color: var(--white); font-weight: 700; }
+    .doc tr:last-child td { border-bottom: 0; }
+
+    /* ── FOOTER (igual que index.html) ───────────── */
+    footer {
+      border-top: 1px solid #1a1a1a;
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      line-height: 1.6;
+    }
+
+    footer p + p { margin-top: 0.5rem; }
+    footer a { color: var(--yellow); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    .footer-tagline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      color: #555;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.35rem 1.25rem;
+    }
+
+    .footer-legal { font-weight: 400; }
+  </style>
+</head>
+<body>
+  <!-- Generado desde legal/politica-tratamiento-datos.md con legal/build_landing_pages.py. No editar a mano. -->
+
+  <header class="topbar">
+    <a href="/" class="brand">AI CAREER BUILDER</a>
+    <a href="/" class="back">← Volver</a>
+  </header>
+
+  <main class="doc">
+    <h1>Política de Tratamiento de Datos Personales — AI Career Builder</h1>
+    <p><strong>Versión 1 · Vigente desde el 9 de noviembre de 2026</strong></p>
+    <hr />
+    <h2 id="1-responsable-del-tratamiento">1. Responsable del tratamiento</h2>
+    <p>Los datos personales que se recogen a través de AI Career Builder (<code>aicareerbuilder.app</code>, <code>app.aicareerbuilder.app</code> y sus agentes) son tratados por:</p>
+    <ul>
+    <li><strong>Nombre:</strong> Luis Felipe Castro Calderón, persona natural que actúa en nombre propio (no es una sociedad).</li>
+    <li><strong>Identificación:</strong> NIT 1022410623-9.</li>
+    <li><strong>Domicilio y dirección:</strong> Carrera 55 # 22-38, Bogotá D.C., Colombia.</li>
+    <li><strong>Correo electrónico:</strong> <a href="mailto:soporte@aicareerbuilder.app">soporte@aicareerbuilder.app</a></li>
+    <li><strong>Teléfono / WhatsApp:</strong> +57 320 858 2372</li>
+    </ul>
+    <p>En esta política, &quot;nosotros&quot; se refiere al responsable indicado arriba, y &quot;usted&quot; al titular de los datos.</p>
+    <h2 id="2-alcance-y-marco-legal">2. Alcance y marco legal</h2>
+    <p>Esta política se aplica a todos los datos personales que tratamos en el sitio web, en el análisis gratuito de hoja de vida (CV) y en los agentes de AI Career Builder:</p>
+    <ul>
+    <li>AI Job Hunter</li>
+    <li>AI English Teacher</li>
+    <li>AI Digital Certification</li>
+    <li>AI Marketing Assistant</li>
+    <li>AI Content Creator</li>
+    <li>AI Video Creator</li>
+    </ul>
+    <p>Se rige por la <a href="http://www.secretariasenado.gov.co/senado/basedoc/ley_1581_2012.html" target="_blank" rel="noopener">Ley Estatutaria 1581 de 2012</a>, el <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=76608" target="_blank" rel="noopener">Decreto 1074 de 2015</a> (Libro 2, Parte 2, Título 2, Capítulo 25), que compila el <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=53646" target="_blank" rel="noopener">Decreto 1377 de 2013</a>, y las instrucciones de la Superintendencia de Industria y Comercio (SIC).</p>
+    <h2 id="3-definiciones-basicas">3. Definiciones básicas</h2>
+    <ul>
+    <li><strong>Dato personal:</strong> información vinculada o que puede asociarse a una persona natural determinada o determinable.</li>
+    <li><strong>Dato sensible:</strong> el que afecta la intimidad del titular o cuyo uso indebido puede generar discriminación. Por ejemplo, los datos de salud, los biométricos, el origen racial o étnico, la orientación política o las convicciones religiosas.</li>
+    <li><strong>Titular:</strong> la persona natural cuyos datos son objeto de tratamiento.</li>
+    <li><strong>Tratamiento:</strong> cualquier operación sobre datos personales: recolección, almacenamiento, uso, circulación o supresión.</li>
+    <li><strong>Encargado:</strong> quien trata datos personales por cuenta del responsable, por ejemplo un proveedor tecnológico.</li>
+    <li><strong>Transmisión:</strong> comunicación de datos a un encargado para que los trate por cuenta del responsable, dentro o fuera de Colombia.</li>
+    <li><strong>Transferencia:</strong> envío de datos a otro responsable, dentro o fuera de Colombia.</li>
+    </ul>
+    <h2 id="4-datos-que-tratamos-y-para-que">4. Datos que tratamos y para qué</h2>
+    <p>Solo recogemos los datos que usted nos entrega o que se generan al usar el servicio.</p>
+    <h3 id="4-1-analisis-gratuito-de-cv-sitio-principal">4.1 Análisis gratuito de CV (sitio principal)</h3>
+    <div class="table-wrap"><table class="cols-3">
+    <thead>
+    <tr>
+    <th>Datos</th>
+    <th>Para qué</th>
+    <th>Dónde se guardan</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Nombre y número de celular</td>
+    <td>Verificar que es una persona real (código por SMS), limitar el análisis gratuito a uno por persona y mostrarle su resultado</td>
+    <td>Base de datos del servicio</td>
+    </tr>
+    <tr>
+    <td>Hoja de vida (archivo PDF o Word)</td>
+    <td>Leer su texto para hacer el análisis</td>
+    <td>El archivo <strong>no se guarda</strong>: se lee en memoria y se descarta</td>
+    </tr>
+    <tr>
+    <td>Resultado del análisis (nivel, resumen, brechas, roles sugeridos, inglés estimado) y país, que se deduce del prefijo del celular</td>
+    <td>Mostrarle el resultado y entregárselo en PDF</td>
+    <td>Base de datos del servicio, <strong>máximo 7 días</strong>. Descargue su PDF al recibirlo</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <h3 id="4-2-cuenta-y-agentes-ai-agents">4.2 Cuenta y agentes (AI Agents)</h3>
+    <div class="table-wrap"><table class="cols-2">
+    <thead>
+    <tr>
+    <th>Datos</th>
+    <th>Para qué</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Correo electrónico</td>
+    <td>Crear su cuenta, enviarle el enlace de acceso (magic link), administrar sus créditos y compras, y atenderle</td>
+    </tr>
+    <tr>
+    <td>Compras, saldo y movimientos de créditos</td>
+    <td>Entregar lo comprado, cobrar las acciones y atender reclamos y reembolsos</td>
+    </tr>
+    <tr>
+    <td>Datos de pago</td>
+    <td><strong>No los vemos.</strong> Su tarjeta u otro medio de pago lo ingresa directamente en MercadoPago. Solo recibimos el estado del pago, el monto, la moneda y el número de la operación.</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <h3 id="4-3-datos-que-usted-entrega-dentro-de-cada-agente">4.3 Datos que usted entrega dentro de cada agente</h3>
+    <div class="table-wrap"><table class="cols-3">
+    <thead>
+    <tr>
+    <th>Agente</th>
+    <th>Datos</th>
+    <th>Para qué</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>AI Job Hunter</td>
+    <td>Hoja de vida o descripción profesional; perfil (rol, experiencia, educación, habilidades, inglés, país, zona horaria); vacantes guardadas y notas; token de Apify si decide conectarlo</td>
+    <td>Buscar y puntuar vacantes, preparar entrevistas y redactar hojas de vida y cartas a la medida</td>
+    </tr>
+    <tr>
+    <td>AI English Teacher</td>
+    <td>Perfil (nombre o apodo, nivel, profesión, metas); conversaciones, textos, errores y progreso; <strong>su voz</strong> cuando usa el micrófono</td>
+    <td>Personalizar las prácticas de inglés y corregir su pronunciación. <strong>La voz no se guarda:</strong> se transcribe y se descarta</td>
+    </tr>
+    <tr>
+    <td>AI Digital Certification</td>
+    <td>Perfil de aprendizaje (meta, área, nivel, disponibilidad, contexto laboral breve); intentos de examen; imágenes y textos que sube para el reconocimiento de texto o la entrega de proyectos</td>
+    <td>Crear y ajustar su ruta de estudio, corregir sus entregas y medir su progreso</td>
+    </tr>
+    <tr>
+    <td>AI Marketing Assistant</td>
+    <td>Perfil de su marca o proyecto (nombre, audiencia, tono, objetivos); conversaciones; y, si decide conectarlos, tokens de Apify o YouTube y el acceso a Google Drive</td>
+    <td>Investigar tendencias y proponer estrategia y piezas de contenido</td>
+    </tr>
+    <tr>
+    <td>AI Content Creator</td>
+    <td>Perfil de su marca; temas y textos; <strong>una foto de su rostro</strong> si decide subirla para crear su avatar; imágenes propias para sus diapositivas</td>
+    <td>Generar carruseles, publicaciones e infografías, incluidas imágenes con su avatar</td>
+    </tr>
+    <tr>
+    <td>AI Video Creator</td>
+    <td>Guiones, temas y narración; <strong>un audio con su voz</strong> si decide subirlo</td>
+    <td>Generar video corto, incluido el sincronizado de labios con su audio</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p><strong>Información de terceros.</strong> Al buscar vacantes o tendencias, el servicio puede mostrar el nombre y el enlace a perfiles profesionales públicos de reclutadores o creadores de contenido, obtenidos por medio de Apify. Esta información solo se usa para mostrarle el resultado de su búsqueda.</p>
+    <p><strong>Datos técnicos.</strong> Su dirección IP se usa durante 60 segundos para limitar el número de solicitudes por minuto y proteger el servicio; no se guarda. Los registros técnicos del proveedor de hospedaje pueden contener su correo o celular y se conservan según el plan del proveedor (hoy, 7 días).</p>
+    <h3 id="4-4-finalidades-necesarias-y-finalidades-opcionales">4.4 Finalidades necesarias y finalidades opcionales</h3>
+    <p><strong>Necesarias</strong> (sin ellas no podemos prestar el servicio):</p>
+    <ol>
+    <li>Crear y administrar su cuenta y su acceso.</li>
+    <li>Prestar el análisis de CV y los agentes que usa.</li>
+    <li>Cobrar, entregar lo comprado, tramitar reembolsos y cumplir obligaciones legales, contables y tributarias.</li>
+    <li>Atender sus solicitudes, quejas y reclamos.</li>
+    <li>Mantener la seguridad del servicio y prevenir el fraude y el abuso.</li>
+    </ol>
+    <p><strong>Opcionales</strong> (solo si usted las autoriza en una casilla aparte, que puede dejar sin marcar):</p>
+    <ol>
+    <li><strong>Publicidad y medición:</strong> medir y mejorar nuestros anuncios con herramientas de terceros, como TikTok. <strong>Hoy no está activo</strong>; si lo activamos, enviaríamos su correo o celular <strong>cifrado (hash)</strong> y el tipo de acción que realizó (ver §7.2).</li>
+    <li><strong>Contacto comercial:</strong> que le escribamos por WhatsApp, correo o llamada para ofrecerle la llamada gratuita de orientación y nuestros productos. Estos mensajes solo se envían por los canales que usted autorice y dentro de los horarios que permite la <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=213990" target="_blank" rel="noopener">Ley 2300 de 2023</a>.</li>
+    </ol>
+    <p>Si no autoriza las finalidades opcionales, puede usar el análisis gratuito y los agentes exactamente igual.</p>
+    <h2 id="5-datos-sensibles">5. Datos sensibles</h2>
+    <p>Algunos datos pueden ser sensibles:</p>
+    <ul>
+    <li><strong>La foto de su rostro</strong> (AI Content Creator).</li>
+    <li><strong>Su voz</strong> (AI English Teacher y AI Video Creator).</li>
+    <li><strong>Cierta información que algunas personas incluyen en su hoja de vida</strong>, como datos de salud, fotografía, origen étnico o creencias.</li>
+    </ul>
+    <p>Para estos datos aplicamos estas reglas:</p>
+    <ul>
+    <li><strong>Usted no está obligado a entregarlos ni a autorizar su tratamiento.</strong> Ningún servicio se condiciona a que los entregue: puede usar texto en lugar de micrófono, crear un avatar sin foto y usar voces sintéticas.</li>
+    <li>Solo los tratamos con su <strong>autorización explícita</strong>, que se pide en el momento de subirlos.</li>
+    <li>Le recomendamos <strong>no incluir en su hoja de vida</strong> datos que no sean necesarios para un proceso de selección.</li>
+    </ul>
+    <p>Las imágenes y la voz se usan para generar su contenido, no para identificarle ni autenticarle.</p>
+    <h2 id="6-autorizacion">6. Autorización</h2>
+    <p>Antes de recoger sus datos le pedimos su autorización previa, expresa e informada:</p>
+    <ul>
+    <li><strong>Casilla obligatoria:</strong> acepta esta política para las finalidades necesarias. Sin ella no podemos prestar el servicio.</li>
+    <li><strong>Casilla opcional:</strong> autoriza las finalidades de publicidad y contacto comercial.</li>
+    <li><strong>Autorización explícita para datos sensibles:</strong> se pide al subir su foto, su voz o su audio.</li>
+    </ul>
+    <p>Guardamos la prueba de cada autorización: qué aceptó, en qué fecha y con qué versión de esta política. El silencio no se toma como autorización.</p>
+    <h2 id="7-con-quien-compartimos-sus-datos">7. Con quién compartimos sus datos</h2>
+    <h3 id="7-1-proveedores-que-tratan-datos-por-nuestra-cuenta-encargados">7.1 Proveedores que tratan datos por nuestra cuenta (encargados)</h3>
+    <p>Usamos proveedores tecnológicos que procesan sus datos <strong>solo para prestar el servicio</strong> y siguiendo nuestras instrucciones. La mayoría está en Estados Unidos, país que la SIC reconoce con un nivel adecuado de protección (<a href="https://www.sic.gov.co/noticias-boletin-juridico-agosto-2017/circular-no-05-del-10-de-agosto-de-2017-publicada-en-el-diario-oficial-no-50321-del-10-de-agosto-de-2017" target="_blank" rel="noopener">Circular Externa 005 de 2017</a>).</p>
+    <div class="table-wrap"><table class="cols-4">
+    <thead>
+    <tr>
+    <th>Proveedor</th>
+    <th>Qué recibe</th>
+    <th>Para qué</th>
+    <th>País</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Anthropic (Claude)</td>
+    <td>Texto de su CV, perfil, conversaciones, guiones; imágenes que sube para reconocer texto o corregir proyectos</td>
+    <td>Inteligencia artificial de los análisis y agentes</td>
+    <td>EE. UU.</td>
+    </tr>
+    <tr>
+    <td>OpenAI</td>
+    <td>Su voz y textos para leer en voz alta (AI English Teacher)</td>
+    <td>Transcribir su voz y generar audio</td>
+    <td>EE. UU.</td>
+    </tr>
+    <tr>
+    <td>Google (Gemini)</td>
+    <td>Su foto y descripciones para generar imágenes (AI Content Creator y AI Video Creator)</td>
+    <td>Generar imágenes</td>
+    <td>EE. UU.</td>
+    </tr>
+    <tr>
+    <td>Google (YouTube, Drive y Sheets)</td>
+    <td>Búsquedas de temas; documentos solo si usted conecta su Google Drive</td>
+    <td>Investigación de tendencias y exportar documentos</td>
+    <td>EE. UU.</td>
+    </tr>
+    <tr>
+    <td>fal (y los modelos de video y voz que ofrece)</td>
+    <td>Imágenes, guiones y su audio, si lo sube (AI Video Creator)</td>
+    <td>Generar video y sincronizar labios</td>
+    <td>EE. UU.</td>
+    </tr>
+    <tr>
+    <td>Microsoft (Edge TTS)</td>
+    <td>Texto de la narración</td>
+    <td>Generar la voz sintética del video</td>
+    <td>EE. UU.</td>
+    </tr>
+    <tr>
+    <td>Twilio</td>
+    <td>Su número de celular</td>
+    <td>Enviar el código de verificación por SMS</td>
+    <td>EE. UU.</td>
+    </tr>
+    <tr>
+    <td>Resend</td>
+    <td>Su correo electrónico</td>
+    <td>Enviar el enlace de acceso y los avisos del servicio</td>
+    <td>EE. UU.</td>
+    </tr>
+    <tr>
+    <td>MercadoPago</td>
+    <td>Su correo y los datos de la compra</td>
+    <td>Procesar el pago</td>
+    <td>Colombia y Argentina</td>
+    </tr>
+    <tr>
+    <td>Railway</td>
+    <td>Todos los datos del servicio (servidores y base de datos)</td>
+    <td>Hospedaje</td>
+    <td>EE. UU.</td>
+    </tr>
+    <tr>
+    <td>Cloudflare (R2)</td>
+    <td>Fotos, imágenes y videos que genera o sube</td>
+    <td>Almacenamiento de archivos</td>
+    <td>EE. UU.</td>
+    </tr>
+    <tr>
+    <td>Netlify</td>
+    <td>Datos técnicos de su visita (IP)</td>
+    <td>Hospedaje del sitio web</td>
+    <td>EE. UU.</td>
+    </tr>
+    <tr>
+    <td>Firecrawl</td>
+    <td>Enlaces de vacantes y temas de estudio (sin datos personales)</td>
+    <td>Verificar vacantes y buscar recursos</td>
+    <td>EE. UU.</td>
+    </tr>
+    <tr>
+    <td>Calendly</td>
+    <td>Los datos que usted ingresa al agendar la llamada gratuita</td>
+    <td>Agendar la llamada</td>
+    <td>EE. UU.</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p>Con estos proveedores la comunicación de datos es una <strong>transmisión</strong> a encargados. Según el <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=76608" target="_blank" rel="noopener">artículo 2.2.2.25.5.2 del Decreto 1074 de 2015</a>, no requiere su autorización adicional cuando existe un contrato de transmisión. Estos proveedores solo pueden usar sus datos para prestarnos el servicio, según sus condiciones de protección de datos.</p>
+    <p><strong>Apify.</strong> Solo trata datos si usted conecta su propia cuenta. En ese caso la relación es entre usted y Apify (República Checa).</p>
+    <h3 id="7-2-publicidad-tiktok">7.2 Publicidad (TikTok)</h3>
+    <p><strong>Hoy no enviamos datos a TikTok ni a otras plataformas de publicidad.</strong> Si en el futuro lo hacemos, será solo con su autorización opcional y separada: enviaríamos su correo o celular <strong>cifrado (hash)</strong> y el tipo de acción que realizó, como una <strong>transferencia internacional</strong> a un responsable distinto, conforme al <a href="http://www.secretariasenado.gov.co/senado/basedoc/ley_1581_2012.html" target="_blank" rel="noopener">artículo 26 de la Ley 1581</a>. Antes de hacerlo actualizaremos esta política y se lo informaremos.</p>
+    <h3 id="7-3-autoridades">7.3 Autoridades</h3>
+    <p>Entregaremos datos a autoridades solo cuando una norma o una orden lo exija.</p>
+    <p><strong>No vendemos sus datos personales.</strong></p>
+    <h2 id="8-cookies-y-tecnologias-similares">8. Cookies y tecnologías similares</h2>
+    <div class="table-wrap"><table class="cols-4">
+    <thead>
+    <tr>
+    <th>Tecnología</th>
+    <th>Tipo</th>
+    <th>Para qué</th>
+    <th>Duración</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><code>jh_session</code></td>
+    <td>Esencial</td>
+    <td>Mantener su sesión iniciada en cada servicio</td>
+    <td>30 días</td>
+    </tr>
+    <tr>
+    <td>Google Fonts</td>
+    <td>Técnica</td>
+    <td>Cargar las tipografías del sitio (Google recibe su IP)</td>
+    <td>Según Google</td>
+    </tr>
+    <tr>
+    <td>Píxel de TikTok</td>
+    <td>Publicidad</td>
+    <td>Medir anuncios</td>
+    <td><strong>No se usa actualmente.</strong> Si se activa, solo se cargará si usted acepta la publicidad</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p>Puede retirar su autorización de publicidad y contacto comercial en cualquier momento escribiendo a <a href="mailto:soporte@aicareerbuilder.app">soporte@aicareerbuilder.app</a>. También puede borrar las cookies desde su navegador.</p>
+    <h2 id="9-cuanto-tiempo-conservamos-sus-datos">9. Cuánto tiempo conservamos sus datos</h2>
+    <div class="table-wrap"><table class="cols-2">
+    <thead>
+    <tr>
+    <th>Datos</th>
+    <th>Plazo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Cuenta, saldo, créditos y contenido que crea en los agentes</td>
+    <td>Mientras su cuenta exista, o hasta que pida su supresión</td>
+    </tr>
+    <tr>
+    <td>Resultado del análisis de CV</td>
+    <td><strong>Máximo 7 días</strong>; después se elimina. Descargue su PDF al recibirlo</td>
+    </tr>
+    <tr>
+    <td>Nombre y celular del análisis gratuito</td>
+    <td>Mientras sean necesarios para limitar el análisis gratuito a uno por persona y, si lo autorizó, para contactarle; hasta que pida su supresión</td>
+    </tr>
+    <tr>
+    <td>Archivo de la hoja de vida en el análisis gratuito</td>
+    <td>No se guarda</td>
+    </tr>
+    <tr>
+    <td>Su voz en AI English Teacher</td>
+    <td>No se guarda</td>
+    </tr>
+    <tr>
+    <td>Clips de AI Video Creator</td>
+    <td>7 días</td>
+    </tr>
+    <tr>
+    <td>Registros de compras y pagos</td>
+    <td>5 años desde la compra, como soporte contable y tributario</td>
+    </tr>
+    <tr>
+    <td>Registros técnicos del hospedaje</td>
+    <td>Según el proveedor (hoy, 7 días)</td>
+    </tr>
+    </tbody>
+    </table></div>
+    <p>Al cumplirse el plazo, o cuando usted pida la supresión y no exista un deber legal de conservarlos, eliminamos los datos de la base de datos y del almacenamiento de archivos.</p>
+    <h2 id="10-sus-derechos">10. Sus derechos</h2>
+    <p>Como titular, usted tiene derecho a:</p>
+    <ol>
+    <li><strong>Conocer, actualizar y rectificar</strong> sus datos.</li>
+    <li><strong>Pedir prueba</strong> de la autorización que nos dio.</li>
+    <li><strong>Ser informado</strong> del uso que les damos.</li>
+    <li><strong>Revocar la autorización y pedir la supresión</strong> de sus datos cuando no se respeten los principios, derechos y garantías de la ley. La revocación o la supresión no proceden cuando usted tenga un deber legal o contractual de permanecer en la base de datos (<a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=53646" target="_blank" rel="noopener">Decreto 1377 de 2013, art. 9</a>).</li>
+    <li><strong>Acceder gratis</strong> a sus datos.</li>
+    <li><strong>Presentar quejas ante la SIC</strong>, después de haber hecho su consulta o reclamo ante nosotros.</li>
+    </ol>
+    <h2 id="11-como-ejercer-sus-derechos">11. Cómo ejercer sus derechos</h2>
+    <p>Queremos que sea sencillo, sin formularios largos ni documentos innecesarios.</p>
+    <p><strong>Canal:</strong> escriba a <strong><a href="mailto:soporte@aicareerbuilder.app">soporte@aicareerbuilder.app</a></strong> desde el correo de su cuenta. Si su solicitud es sobre el análisis gratuito, que se identifica con su celular, indique ese número.</p>
+    <p><strong>Qué debe incluir</strong> (es lo único obligatorio):</p>
+    <ul>
+    <li>Qué quiere: consultar, actualizar, corregir, suprimir o revocar.</li>
+    <li>El correo o el celular con que usa el servicio.</li>
+    </ul>
+    <p><strong>Cómo verificamos que es usted:</strong></p>
+    <ul>
+    <li>Si escribe <strong>desde el correo de su cuenta</strong>, basta con eso.</li>
+    <li>Si escribe desde otro correo, le enviaremos un enlace o un código al correo o celular registrado para confirmarlo.</li>
+    <li><strong>Solo pediremos un documento de identidad</strong> cuando la solicitud la haga un representante, un apoderado o un causahabiente, o cuando no sea posible verificarle por los medios anteriores. En esos casos se necesita la prueba de la representación.</li>
+    </ul>
+    <p><strong>Plazos legales</strong> (<a href="http://www.secretariasenado.gov.co/senado/basedoc/ley_1581_2012.html" target="_blank" rel="noopener">Ley 1581 de 2012, arts. 14 y 15</a>):</p>
+    <ul>
+    <li><strong>Consultas:</strong> respuesta en máximo <strong>10 días hábiles</strong> desde que la recibimos. Si no es posible, le diremos el motivo y la nueva fecha, que no superará 5 días hábiles más.</li>
+    <li><strong>Reclamos</strong> (corrección, actualización, supresión o incumplimiento): respuesta en máximo <strong>15 días hábiles</strong> desde el día siguiente a recibirlo. Si no es posible, le diremos el motivo y la nueva fecha, que no superará 8 días hábiles más.
+    <ul>
+    <li>Si el reclamo está incompleto, se lo diremos dentro de los 5 días siguientes para que lo complete.</li>
+    <li>Si pasan 2 meses sin que lo complete, se entenderá que desistió.</li>
+    <li>Mientras se resuelve, la información quedará marcada como &quot;reclamo en trámite&quot;.</li>
+    </ul>
+    </li>
+    </ul>
+    <p><strong>Supresión de su cuenta:</strong> si pide eliminar su cuenta, borramos sus datos de la base de datos y sus archivos almacenados, salvo los registros de compras que debamos conservar por ley, y le confirmamos por correo cuando esté hecho.</p>
+    <h2 id="12-seguridad">12. Seguridad</h2>
+    <p>Aplicamos medidas razonables para proteger sus datos:</p>
+    <ul>
+    <li>Conexiones cifradas (HTTPS con HSTS).</li>
+    <li>Cookies de sesión <code>HttpOnly</code> y <code>Secure</code>.</li>
+    <li>Archivos privados con enlaces temporales de una hora.</li>
+    <li>Credenciales y llaves de los proveedores fuera del código.</li>
+    <li>Límites de solicitudes contra el abuso.</li>
+    <li>Acceso administrativo restringido al responsable.</li>
+    </ul>
+    <p>No vemos ni guardamos los datos de su tarjeta. Ningún sistema es completamente infalible. Si ocurre un incidente que afecte sus datos, lo informaremos a la SIC y a usted cuando la ley lo exija.</p>
+    <h2 id="13-menores-de-edad">13. Menores de edad</h2>
+    <p>AI Career Builder está dirigido a <strong>personas mayores de 18 años</strong>. No recogemos a sabiendas datos de menores. Si nos enteramos de que un menor nos entregó sus datos, los eliminaremos.</p>
+    <h2 id="14-cambios-a-esta-politica">14. Cambios a esta política</h2>
+    <p>Si cambiamos esta política de forma sustancial, se lo comunicaremos por correo o en el servicio <strong>antes</strong> de aplicar los cambios. Si el cambio afecta las finalidades, le pediremos de nuevo su autorización.</p>
+    <h2 id="15-vigencia">15. Vigencia</h2>
+    <p>Esta política rige desde el 9 de noviembre de 2026. Sus datos se tratarán durante los plazos de la sección 9 y mientras sean necesarios para las finalidades autorizadas.</p>
+    <hr />
+    <h2 id="anexo-a-aviso-de-privacidad-version-corta">Anexo A — Aviso de privacidad (versión corta)</h2>
+    <blockquote>
+    <p><strong>Aviso de privacidad.</strong> Luis Felipe Castro Calderón, persona natural, identificado con NIT 1022410623-9, es el responsable del tratamiento de los datos personales que usted entrega en AI Career Builder.</p>
+    <p>Los usamos para crear su cuenta, prestarle el análisis de CV y los agentes, cobrar, atenderle y proteger el servicio. Con su autorización opcional, también para contacto comercial y medición de anuncios.</p>
+    <p>Usted puede conocer, actualizar, rectificar y suprimir sus datos, y revocar su autorización, escribiendo a <a href="mailto:soporte@aicareerbuilder.app">soporte@aicareerbuilder.app</a>. Los datos sensibles (foto, voz) son facultativos.</p>
+    <p>Consulte la política completa en <a href="/privacidad">aicareerbuilder.app/privacidad</a>.</p>
+    </blockquote>
+    <h2 id="anexo-b-textos-de-las-casillas">Anexo B — Textos de las casillas</h2>
+    <p><strong>Obligatoria</strong> (antes de verificar el celular, subir el CV o crear la cuenta):</p>
+    <blockquote>
+    <p>☐ Acepto la <a href="/privacidad">Política de Tratamiento de Datos</a> y los <a href="/terminos">Términos y Condiciones</a>, y autorizo el tratamiento de mis datos para prestarme el servicio. Declaro que soy mayor de 18 años.</p>
+    </blockquote>
+    <p><strong>Opcional</strong> (sin marcar por defecto):</p>
+    <blockquote>
+    <p>☐ Autorizo que me contacten por WhatsApp, correo o llamada con ofertas y la llamada gratuita de orientación. Puedo retirar esta autorización cuando quiera.</p>
+    </blockquote>
+    <p><strong>Datos sensibles</strong> (al subir una foto del rostro o un audio con voz):</p>
+    <blockquote>
+    <p>☐ Autorizo de forma explícita el tratamiento de esta imagen o audio para generar mi contenido. Sé que no estoy obligado a entregarlo y que puedo usar las opciones sin foto ni voz. Declaro que la imagen o la voz es mía, o que tengo autorización de la persona.</p>
+    </blockquote>
+  </main>
+
+  <footer>
+    <p class="footer-tagline">EL TRABAJO REMOTO ES EL MEDIO. LO TUYO ES EL FIN.</p>
+    <p class="footer-links">
+      <a href="/terminos">Términos y condiciones</a>
+      <a href="/privacidad">Política de datos</a>
+      <a href="/reembolsos">Reembolsos</a>
+    </p>
+    <p>
+      Soporte: <a href="mailto:soporte@aicareerbuilder.app">soporte@aicareerbuilder.app</a>
+      · WhatsApp <a href="https://wa.me/573208582372" target="_blank" rel="noopener">+57 320 858 2372</a>
+    </p>
+    <p class="footer-legal">Luis Felipe Castro Calderón · NIT 1022410623-9 · Bogotá D.C., Colombia</p>
+    <p class="footer-legal">
+      Protección al consumidor:
+      <a href="https://www.sic.gov.co" target="_blank" rel="noopener">Superintendencia de Industria y Comercio</a>
+    </p>
+    <p>
+      Hecho por <a href="https://www.instagram.com/where_lucho" target="_blank" rel="noopener">@where_lucho</a>
+    </p>
+  </footer>
+</body>
+</html>
