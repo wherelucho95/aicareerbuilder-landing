@@ -561,6 +561,45 @@
 
     .footer-legal { font-weight: 400; }
 
+    /* ── AVISO DE PUBLICIDAD ─────────────────────── */
+    .aviso-ads {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 50;
+      background: var(--surface);
+      border-top: 2px solid var(--yellow);
+      padding: 1rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem 1.5rem;
+    }
+    .aviso-ads[hidden] { display: none; }
+    .aviso-ads p {
+      flex: 1 1 320px;
+      max-width: 720px;
+      margin: 0;
+      color: #DDD;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+    .aviso-ads a { color: var(--yellow); }
+    .aviso-ads-botones { display: flex; gap: 0.75rem; }
+    .aviso-ads button {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.6rem 1.4rem;
+      border: 2px solid var(--yellow);
+      border-radius: 4px;
+      background: var(--black);
+      color: var(--yellow);
+      cursor: pointer;
+    }
+    .aviso-ads button:hover,
+    .aviso-ads button:focus-visible { background: var(--yellow); color: var(--black); }
+
     /* ── RESPONSIVE ──────────────────────────────── */
     @media (max-width: 640px) {
       .camino { flex-direction: column; align-items: center; }
@@ -859,6 +898,7 @@
       <a href="/terminos">Términos y condiciones</a>
       <a href="/privacidad">Política de datos</a>
       <a href="/reembolsos">Reembolsos</a>
+      <a href="/#publicidad">Preferencias de publicidad</a>
     </p>
     <p>
       Soporte: <a href="mailto:soporte@aicareerbuilder.app">soporte@aicareerbuilder.app</a>
@@ -873,6 +913,139 @@
       Hecho por <a href="https://www.instagram.com/where_lucho" target="_blank" rel="noopener">@where_lucho</a>
     </p>
   </footer>
+
+  <!-- Aviso de publicidad: el píxel de TikTok solo carga si la persona acepta -->
+  <div class="aviso-ads" id="aviso-ads" role="dialog" aria-label="Aviso de publicidad" hidden>
+    <p>
+      <strong>¿Nos dejas medir nuestros anuncios con TikTok?</strong>
+      Si aceptas, TikTok recibe datos de tu visita (IP, navegador y lo que haces en este sitio)
+      y guarda cookies; es una transferencia internacional de datos. Si rechazas, todo funciona igual.
+      <a href="/privacidad#8-cookies-y-tecnologias-similares">Política de datos</a>
+    </p>
+    <div class="aviso-ads-botones">
+      <button type="button" id="ads-rechazar">Rechazar</button>
+      <button type="button" id="ads-aceptar">Aceptar</button>
+    </div>
+  </div>
+
+  <!-- Publicidad con consentimiento + parámetros de campaña hacia la app -->
+  <script>
+  (function () {
+    var PIXEL_ID = 'DBF7LIRC77U5A2ME9O7G';
+    var VERSION = '2026-11-17';       // versión de la política de datos que se aceptó
+    var COOKIE = 'acb_ads';           // 1.<versión>.<fecha> = aceptó · 0.<…> = rechazó
+    var aviso = document.getElementById('aviso-ads');
+
+    function decision() {
+      var m = document.cookie.match(/(?:^|;\s*)acb_ads=([01])/);
+      return m ? m[1] : null;
+    }
+
+    function guardar(valor) {
+      // Dominio raíz: la decisión vale también en app.aicareerbuilder.app.
+      var dominio = /(^|\.)aicareerbuilder\.app$/.test(location.hostname)
+        ? '; Domain=.aicareerbuilder.app' : '';
+      document.cookie = COOKIE + '=' + valor + '.' + VERSION + '.' + Date.now() +
+        '; Path=/; Max-Age=15552000; SameSite=Lax' + dominio +
+        (location.protocol === 'https:' ? '; Secure' : '');
+    }
+
+    function cargarPixel() {
+      if (window.ttq) { return; }
+      !function (w, d, t) {
+        w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+        var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+        ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+        ttq.load(PIXEL_ID);
+        ttq.page();
+      }(window, document, 'ttq');
+    }
+
+    function abrirAviso() { aviso.hidden = false; }
+
+    function cerrarAviso() {
+      aviso.hidden = true;
+      // Sin el #publicidad, el enlace del pie vuelve a abrir el aviso.
+      if (location.hash === '#publicidad') {
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+    }
+
+    document.getElementById('ads-aceptar').addEventListener('click', function () {
+      guardar('1');
+      cerrarAviso();
+      cargarPixel();
+    });
+    document.getElementById('ads-rechazar').addEventListener('click', function () {
+      var habiaAceptado = decision() === '1';
+      guardar('0');
+      cerrarAviso();
+      if (habiaAceptado) {
+        // Se borran las cookies de TikTok y se recarga: el píxel ya cargado no
+        // se puede descargar de la página.
+        ['_ttp', '_tt_enable_cookie'].forEach(function (c) {
+          document.cookie = c + '=; Path=/; Max-Age=0; Domain=.aicareerbuilder.app';
+        });
+        location.reload();
+      }
+    });
+
+    if (decision() === '1') { cargarPixel(); }
+    if (decision() === null || location.hash === '#publicidad') { abrirAviso(); }
+    // El enlace del pie abre el aviso sin navegar: no se pierde la campaña de la URL.
+    document.querySelector('a[href="/#publicidad"]').addEventListener('click', function (e) {
+      e.preventDefault();
+      abrirAviso();
+    });
+
+    // Campaña (utm_*) y sitio de origen de esta visita.
+    var origen = new URLSearchParams(location.search);
+    function fuente() {
+      var f = {};
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) {
+        if (origen.get(k)) { f[k] = origen.get(k).slice(0, 120); }
+      });
+      try {
+        var ref = document.referrer ? new URL(document.referrer).hostname : '';
+        if (ref && !/(^|\.)aicareerbuilder\.app$/.test(ref)) { f.ref = ref; }
+      } catch (err) { /* referrer inválido: se omite */ }
+      return f;
+    }
+
+    // Medición propia: cuenta la vista y el clic en un CTA con su campaña. Sin
+    // cookies ni datos personales; no depende del aviso de publicidad.
+    function medir(evento, extra) {
+      if (!navigator.sendBeacon) { return; }
+      var datos = Object.assign({ e: evento }, fuente(), extra || {});
+      navigator.sendBeacon('https://app.aicareerbuilder.app/e', JSON.stringify(datos));
+    }
+    medir('landing_view');
+
+    // CTAs hacia la app: llevan la campaña, de dónde vino la visita y, solo si
+    // aceptó la publicidad, el identificador del clic de TikTok.
+    var ctas = document.querySelectorAll('a[href^="https://app.aicareerbuilder.app"]');
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a[href^="https://app.aicareerbuilder.app"]');
+      if (!a) { return; }
+      var destino = new URL(a.href);
+      var f = fuente();
+      Object.keys(f).forEach(function (k) { destino.searchParams.set(k, f[k]); });
+      destino.searchParams.set('via', 'landing');
+      medir('landing_cta_click', { cta: 'cta-' + (Array.prototype.indexOf.call(ctas, a) + 1) });
+      if (decision() === '1') {
+        if (origen.get('ttclid')) { destino.searchParams.set('ttclid', origen.get('ttclid')); }
+        if (window.ttq && a.classList.contains('btn-primary')) {
+          ttq.track('ClickButton', {
+            content_type: 'product',
+            content_name: a.textContent.trim(),
+            description: 'CTA landing → app'
+          });
+        }
+      }
+      a.href = destino.toString();
+    });
+  })();
+  </script>
 
   <!-- Scroll-reveal del mapa del camino (hitos aparecen en secuencia) -->
   <script>
