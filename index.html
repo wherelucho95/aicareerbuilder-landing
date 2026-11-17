@@ -709,7 +709,7 @@
   </section>
 
   <!-- LAS HERRAMIENTAS 3+3 -->
-  <section class="section">
+  <section class="section" id="herramientas">
     <p class="section-label">Las herramientas</p>
     <h2 class="section-title">3 AGENTES PARA LA BASE. <em>3 PARA LO TUYO.</em></h2>
 
@@ -975,6 +975,7 @@
       guardar('1');
       cerrarAviso();
       cargarPixel();
+      avisarOferta();
     });
     document.getElementById('ads-rechazar').addEventListener('click', function () {
       var habiaAceptado = decision() === '1';
@@ -992,6 +993,29 @@
 
     if (decision() === '1') { cargarPixel(); }
     if (decision() === null || location.hash === '#publicidad') { abrirAviso(); }
+
+    // ViewContent: la persona llegó a la sección de los agentes y sus precios.
+    // Sale una vez por visita y solo si aceptó la publicidad, la haya aceptado
+    // antes o después de ver la sección.
+    var vioOferta = false, avisoOferta = false;
+    function avisarOferta() {
+      if (!vioOferta || avisoOferta || decision() !== '1' || !window.ttq) { return; }
+      avisoOferta = true;
+      ttq.track('ViewContent', {
+        content_type: 'product',
+        content_id: 'agentes',
+        content_name: 'Agentes y paquetes'
+      });
+    }
+    var oferta = document.getElementById('herramientas');
+    if (oferta && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (entradas, observador) {
+        if (!entradas[0].isIntersecting) { return; }
+        observador.disconnect();
+        vioOferta = true;
+        avisarOferta();
+      }, { rootMargin: '0px 0px -30% 0px' }).observe(oferta);
+    }
     // El enlace del pie abre el aviso sin navegar: no se pierde la campaña de la URL.
     document.querySelector('a[href="/#publicidad"]').addEventListener('click', function (e) {
       e.preventDefault();
