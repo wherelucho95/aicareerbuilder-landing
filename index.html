@@ -998,21 +998,40 @@
       abrirAviso();
     });
 
-    // CTAs hacia la app: llevan la campaña (utm_*), de dónde vino la visita y,
-    // solo si aceptó la publicidad, el identificador del clic de TikTok.
+    // Campaña (utm_*) y sitio de origen de esta visita.
+    var origen = new URLSearchParams(location.search);
+    function fuente() {
+      var f = {};
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) {
+        if (origen.get(k)) { f[k] = origen.get(k).slice(0, 120); }
+      });
+      try {
+        var ref = document.referrer ? new URL(document.referrer).hostname : '';
+        if (ref && !/(^|\.)aicareerbuilder\.app$/.test(ref)) { f.ref = ref; }
+      } catch (err) { /* referrer inválido: se omite */ }
+      return f;
+    }
+
+    // Medición propia: cuenta la vista y el clic en un CTA con su campaña. Sin
+    // cookies ni datos personales; no depende del aviso de publicidad.
+    function medir(evento, extra) {
+      if (!navigator.sendBeacon) { return; }
+      var datos = Object.assign({ e: evento }, fuente(), extra || {});
+      navigator.sendBeacon('https://app.aicareerbuilder.app/e', JSON.stringify(datos));
+    }
+    medir('landing_view');
+
+    // CTAs hacia la app: llevan la campaña, de dónde vino la visita y, solo si
+    // aceptó la publicidad, el identificador del clic de TikTok.
+    var ctas = document.querySelectorAll('a[href^="https://app.aicareerbuilder.app"]');
     document.addEventListener('click', function (e) {
       var a = e.target.closest('a[href^="https://app.aicareerbuilder.app"]');
       if (!a) { return; }
-      var origen = new URLSearchParams(location.search);
       var destino = new URL(a.href);
-      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) {
-        if (origen.get(k)) { destino.searchParams.set(k, origen.get(k).slice(0, 120)); }
-      });
+      var f = fuente();
+      Object.keys(f).forEach(function (k) { destino.searchParams.set(k, f[k]); });
       destino.searchParams.set('via', 'landing');
-      try {
-        var ref = document.referrer ? new URL(document.referrer).hostname : '';
-        if (ref && !/(^|\.)aicareerbuilder\.app$/.test(ref)) { destino.searchParams.set('ref', ref); }
-      } catch (err) { /* referrer inválido: se omite */ }
+      medir('landing_cta_click', { cta: 'cta-' + (Array.prototype.indexOf.call(ctas, a) + 1) });
       if (decision() === '1') {
         if (origen.get('ttclid')) { destino.searchParams.set('ttclid', origen.get('ttclid')); }
         if (window.ttq && a.classList.contains('btn-primary')) {
