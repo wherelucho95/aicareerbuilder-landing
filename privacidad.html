@@ -212,7 +212,7 @@
 
   <main class="doc">
     <h1>Política de Tratamiento de Datos Personales — AI Career Builder</h1>
-    <p><strong>Versión 1 · Vigente desde el 9 de noviembre de 2026 · Aclarada el 12 y el 13 de noviembre de 2026 (secciones 4.3 y 7.1) · Actualizada el 17 de noviembre de 2026 (publicidad con TikTok y medición propia: secciones 4.4, 6, 7.2 y 8)</strong></p>
+    <p><strong>Versión 1 · Vigente desde el 9 de noviembre de 2026 · Aclarada el 12 y el 13 de noviembre de 2026 (secciones 4.3 y 7.1) · Actualizada el 17 de noviembre de 2026 (publicidad con TikTok y medición propia: secciones 4.4, 6, 7.2 y 8; documento de identidad e identificador de dispositivo para el pago: secciones 4.2, 7.1 y 8)</strong></p>
     <hr />
     <h2 id="1-responsable-del-tratamiento">1. Responsable del tratamiento</h2>
     <p>Los datos personales que se recogen a través de AI Career Builder (<code>aicareerbuilder.app</code>, <code>app.aicareerbuilder.app</code> y sus agentes) son tratados por:</p>
@@ -292,8 +292,16 @@
     <td>Entregar lo comprado, cobrar las acciones y atender reclamos y reembolsos</td>
     </tr>
     <tr>
+    <td>Documento de identidad (tipo y número)</td>
+    <td>Lo pedimos antes de pagar y lo enviamos a MercadoPago junto con la compra. MercadoPago lo exige para pagar con tarjeta y así el pago se aprueba con más facilidad. Lo usamos solo para procesar el pago.</td>
+    </tr>
+    <tr>
     <td>Datos de pago</td>
-    <td><strong>No los vemos.</strong> Su tarjeta u otro medio de pago lo ingresa directamente en MercadoPago. Solo recibimos el estado del pago, el monto, la moneda y el número de la operación.</td>
+    <td><strong>No vemos su tarjeta.</strong> El medio de pago lo ingresa directamente en MercadoPago. Solo recibimos el estado del pago, el monto, la moneda y el número de la operación.</td>
+    </tr>
+    <tr>
+    <td>Identificador del dispositivo (Device ID)</td>
+    <td>Un código que MercadoPago genera en su navegador para verificar que el pago es seguro y prevenir fraude. Se arma solo al momento de pagar y se envía a MercadoPago con la compra.</td>
     </tr>
     </tbody>
     </table></div>
@@ -442,8 +450,8 @@
     </tr>
     <tr>
     <td>MercadoPago</td>
-    <td>Su correo y los datos de la compra</td>
-    <td>Procesar el pago</td>
+    <td>Su correo, su documento de identidad, los datos de la compra y el identificador de su dispositivo</td>
+    <td>Procesar el pago y prevenir fraude</td>
     <td>Colombia y Argentina</td>
     </tr>
     <tr>
@@ -505,6 +513,12 @@
     <td>Esencial</td>
     <td>Mantener su sesión iniciada en cada servicio</td>
     <td>30 días</td>
+    </tr>
+    <tr>
+    <td><code>mp_device</code> (Device ID de MercadoPago)</td>
+    <td>Esencial</td>
+    <td>Verificar que el pago es seguro y prevenir fraude (se envía a MercadoPago al pagar)</td>
+    <td>30 minutos</td>
     </tr>
     <tr>
     <td>Google Fonts</td>
