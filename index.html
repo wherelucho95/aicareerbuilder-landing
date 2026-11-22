@@ -452,6 +452,10 @@
 
     .etapa-pill.dos { background: #2a2a2a; color: #B5B5B5; }
 
+    /* Etapa en construcción (2026-11-22): todavía no se vende en la app */
+    .etapa-pill.obra { background: var(--black); color: var(--yellow); border: 1px solid var(--yellow); }
+    .en-obra .features-grid { opacity: 0.6; }
+
     .etapa-title {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.5rem;
@@ -1043,11 +1047,12 @@
       </div>
     </div>
 
-    <div class="etapa">
+    <div class="etapa en-obra">
       <div class="etapa-head">
         <span class="etapa-pill dos">Etapa 2</span>
         <span class="etapa-title">🚀 Construir lo tuyo</span>
-        <span class="etapa-nota">Para cuando ya tengas el trabajo remoto.</span>
+        <span class="etapa-pill obra">🚧 En construcción</span>
+        <span class="etapa-nota">Para cuando ya tengas el trabajo remoto. Estamos construyendo esta etapa: todavía no está habilitada.</span>
       </div>
       <div class="features-grid lista-movil">
         <div class="feature-card">
